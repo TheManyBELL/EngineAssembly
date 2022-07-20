@@ -77,3 +77,6 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# qinwen
+Packages/com.ptc.vuforia.engine-10.7.2.tgz
