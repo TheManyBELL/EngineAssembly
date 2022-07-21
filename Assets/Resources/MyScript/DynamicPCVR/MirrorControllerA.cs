@@ -19,11 +19,24 @@ public class MirrorControllerA : NetworkBehaviour
     public readonly SyncList<DPCSymbol> syncPressList = new SyncList<DPCSymbol>();
 
     // 需要同步的变量
-
-    
+    [SyncVar]
+    public DPCIndicator auxiliaryIndicator = new DPCIndicator() { name = null,position = new Vector3() };
 
 
     #region command
+
+    /// <summary>
+    /// 2022.7.21
+    /// qinwen
+    /// </summary>
+    /// <param name="newIndicator"></param>
+    [Command]
+    public void CmdUpdateDPCIndicator(DPCIndicator newIndicator)
+    {
+        auxiliaryIndicator = newIndicator;
+        Debug.Log("[server] newIndicator updated");
+    }
+
     /// <summary>
     /// VR client add new arrow
     /// </summary>
@@ -72,6 +85,18 @@ public class MirrorControllerA : NetworkBehaviour
     {
         syncPressList[newPress.index] = newPress;
         Debug.Log("[server] press " + newPress.index + " updated");
+    }
+
+    /// <summary>
+    /// date:2022.7.21
+    /// author:qinwen
+    /// introduction:清理线段列表
+    /// </summary>
+    [Command]
+    public void CmdDeleteAllArrow()
+    {
+        syncArrowList.Clear();
+        Debug.Log("server: arrow cleaned");
     }
 
 

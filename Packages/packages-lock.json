@@ -27,9 +27,9 @@
       }
     },
     "com.ptc.vuforia.engine": {
-      "version": "file:com.ptc.vuforia.engine-10.7.2",
+      "version": "file:com.ptc.vuforia.engine-10.7.2.tgz",
       "depth": 0,
-      "source": "embedded",
+      "source": "local-tarball",
       "dependencies": {
         "com.unity.ugui": "1.0.0"
       }

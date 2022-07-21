@@ -13,11 +13,22 @@ public class LineRenderARA : MonoBehaviour
 
     public bool origin_line = true;
 
+
+    // 零件虚影指示相关变量
+    private List<GameObject> enginePartsList;
+    private DPCIndicator indicator;
+    private GameObject virtualPart = null;
+    public Material virtualPartMaterial; // from inspector
+
     // Start is called before the first frame update
     void Start()
     {
         mirrorController = GetComponentInParent<MirrorControllerA>();
         lines = new List<GameObject>();
+
+        // 从SmartSignA获得零件列表
+        enginePartsList = GetComponentInParent<EngineAssemblyInfo>().EnginePartsList;
+
     }
 
     // Update is called once per frame
@@ -31,6 +42,32 @@ public class LineRenderARA : MonoBehaviour
             DrawLine(ref current_line);
         }
         ClearLine();
+
+        // qinwen
+        if(mirrorController.syncArrowList.Count == 1 && virtualPart==null)
+        {
+            indicator = mirrorController.auxiliaryIndicator;
+            if (indicator.name != null)
+            {
+                foreach (GameObject partsObj in enginePartsList)
+                {
+                    if (indicator.name == partsObj.name)
+                    {
+                        virtualPart = Instantiate(partsObj);
+                        virtualPart.transform.position = indicator.position;
+                        virtualPart.GetComponent<MeshRenderer>().material = virtualPartMaterial;
+                        Debug.Log("AR客户端新增当前指示物");
+                    }
+                }
+            }
+        }
+        if(mirrorController.syncArrowList.Count == 0 && virtualPart != null)
+        {
+            Destroy(virtualPart);
+            Debug.Log("AR客户端删除了当前指示物");
+        }
+        
+
     }
 
     void DrawLine(ref DPCArrow currend_line)

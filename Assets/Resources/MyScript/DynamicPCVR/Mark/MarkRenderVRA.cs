@@ -48,9 +48,9 @@ public class MarkRenderVRA : MonoBehaviour
         // delete segment
         for (int i = 0; i > delta; --i)
         {
-            for (int j = 0; i < 3; ++j)
+            for (int j = 0; j < 3; ++j)
             {
-                GameObject tempObj = segmentObjectList[n_curSegmentObj - 1 + i];
+                GameObject tempObj = segmentObjectList[n_curSegmentObj - 1 - i * 3 - j ];
                 segmentObjectList.Remove(tempObj);
                 Destroy(tempObj);
             }

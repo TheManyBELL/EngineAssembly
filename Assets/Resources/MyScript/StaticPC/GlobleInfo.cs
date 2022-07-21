@@ -110,6 +110,12 @@ public enum ServerNumber
     SERVER1 = 0, SERVER2, SERVER3, SERVER4
 }
 
+public struct DPCIndicator
+{
+    public string name;
+    public Vector3 position;
+}
+
 
 public static class GlobleInfo
 {
