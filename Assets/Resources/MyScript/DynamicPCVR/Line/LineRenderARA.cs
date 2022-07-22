@@ -73,6 +73,8 @@ public class LineRenderARA : MonoBehaviour
                         virtualPart = Instantiate(partsObj);
                         virtualPart.transform.position = indicator.position;
                         virtualPart.GetComponentInChildren<MeshRenderer>().material = virtualPartMaterial;
+                        virtualPart.transform.Find("Label").gameObject.SetActive(false);
+                        
                         Debug.Log("AR客户端新增当前指示物");
                     }
                 }

@@ -52,7 +52,7 @@ public class MarkPlacementVRA : MonoBehaviour
     {
         globalUtils = GetComponent<GlobalUtilsVR>();
         // 获取引擎零件列表
-        enginePartsList = GetComponentInParent<EngineAssemblyInfo>().EnginePartsList;
+        // enginePartsList = GetComponentInParent<EngineAssemblyInfo>().EnginePartsList;
     }
 
     // Start is called before the first frame update
@@ -181,7 +181,7 @@ public class MarkPlacementVRA : MonoBehaviour
             {
                 virtualPart = Instantiate(vrSelectedPart);
                 virtualPart.transform.position = new Vector3(currentPointList[1].x, currentPointList[1].y+0.4f, currentPointList[1].z);
-                virtualPart.GetComponent<MeshRenderer>().material = virtualPartMaterial;
+                virtualPart.GetComponentInChildren<MeshRenderer>().material = virtualPartMaterial;
                 myController.CmdUpdateDPCIndicator(new DPCIndicator()
                 {
                     name = vrSelectedPart.name,
