@@ -12,7 +12,8 @@ public class AssemblyInfo : MonoBehaviour
     /// <summary>
     /// 主控制脚本，在无人机模型上
     /// </summary>
-    public MainController mainController;
+    public GameObject engineAssemblyContent = null;
+    private MainController mainController = null;
 
     // 主控制脚本的 组件装配序列 列表
     public List<GameObject> componentAssemblySequence;
@@ -27,9 +28,25 @@ public class AssemblyInfo : MonoBehaviour
 
     private void Awake()
     {
-        componentAssemblySequence = mainController.componentAssemblySequence;
-        deviceList = mainController.deviceList;
-        waikeList = mainController.waikeList;
+        deviceList = new List<GameObject>();
+
+        //componentAssemblySequence = mainController.componentAssemblySequence;
+        //deviceList = mainController.deviceList;
+        //waikeList = mainController.waikeList;
     }
 
+    private void Update()
+    {
+        // 查找
+        if(engineAssemblyContent == null)
+        {
+            engineAssemblyContent = GameObject.FindGameObjectWithTag("EngineAssembluContent");
+            if (engineAssemblyContent)
+            {
+                Debug.Log("Assemblyinfo 已找到 engineAssemblyContent");
+                mainController = engineAssemblyContent.GetComponent<MainController>();
+                deviceList = mainController.deviceList;
+            }
+        }
+    }
 }

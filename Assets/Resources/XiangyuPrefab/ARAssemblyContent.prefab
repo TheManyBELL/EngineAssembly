@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1426508085618178244
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7350652497954759198}
+  - component: {fileID: 1379737325750074673}
+  m_Layer: 0
+  m_Name: "\u5706\u76D81"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7350652497954759198
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426508085618178244}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.564, y: 0.2444, z: -0.125}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8547567183082700662}
+  m_Father: {fileID: 8547567182962757171}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1379737325750074673
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426508085618178244}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1059705, y: 0.006500006, z: 0.1058611}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4656610714105394111
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,7 +56,7 @@ GameObject:
   - component: {fileID: 4656610714105394110}
   - component: {fileID: 4656610714105394080}
   - component: {fileID: 4656610714105394081}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +135,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8840965628143087518}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: new1.7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,6 +157,51 @@ Transform:
   m_Father: {fileID: 8547567182962757171}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5782890646852506339
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4716466448885787541}
+  - component: {fileID: 5140443508225278369}
+  m_Layer: 0
+  m_Name: "\u534A\u5706\u76D81"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4716466448885787541
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5782890646852506339}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.404, y: 0.2444, z: -0.12}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8547567182567797898}
+  m_Father: {fileID: 8547567182962757171}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5140443508225278369
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5782890646852506339}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.09823623, y: 0.006229669, z: 0.1085183}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6040330762397279596
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,7 +214,7 @@ GameObject:
   - component: {fileID: 964136099685498601}
   - component: {fileID: 2402046373516883880}
   - component: {fileID: 4394976979704622087}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: 1,7 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,7 +306,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567181315052014}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Washer.2 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,7 +339,7 @@ GameObject:
   - component: {fileID: 8547567181318075581}
   - component: {fileID: 8547567181318075583}
   - component: {fileID: 8547567181318075582}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 13 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +418,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567181340339509}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Nut.1 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -361,7 +451,7 @@ GameObject:
   - component: {fileID: 8547567181357802622}
   - component: {fileID: 8547567181357802608}
   - component: {fileID: 8547567181357802623}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -443,7 +533,7 @@ GameObject:
   - component: {fileID: 8547567181359528108}
   - component: {fileID: 8547567181359528107}
   - component: {fileID: 4280405610675702731}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: 1,5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -537,7 +627,7 @@ GameObject:
   - component: {fileID: 8547567181362701921}
   - component: {fileID: 8547567181362701923}
   - component: {fileID: 8547567181362701922}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -618,7 +708,7 @@ GameObject:
   - component: {fileID: 8547567181371380588}
   - component: {fileID: 8547567181371380590}
   - component: {fileID: 8547567181371380589}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 39
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -699,7 +789,7 @@ GameObject:
   - component: {fileID: 8547567181373169178}
   - component: {fileID: 8547567181373169180}
   - component: {fileID: 8547567181373169179}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 49
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -778,7 +868,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567181377363769}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Inner Ring.1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -809,7 +899,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567181386544277}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Nut.1 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -842,7 +932,7 @@ GameObject:
   - component: {fileID: 8547567181392916694}
   - component: {fileID: 8547567181392916712}
   - component: {fileID: 8547567181392916695}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: C2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -921,7 +1011,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567181399582442}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Screw.1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -952,7 +1042,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567181410568305}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: 2,7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -985,7 +1075,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567181413628799}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Nut.1 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1016,7 +1106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567181426214016}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Screw.1 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1049,7 +1139,7 @@ GameObject:
   - component: {fileID: 8547567181433435884}
   - component: {fileID: 8547567181433435886}
   - component: {fileID: 8547567181433435885}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1128,7 +1218,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567181483415424}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: 3,2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1160,7 +1250,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567181502960201}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Fastener Assembly.10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1194,7 +1284,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567181505544325}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Fastener Assembly.1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1231,7 +1321,7 @@ GameObject:
   - component: {fileID: 8547567181523007664}
   - component: {fileID: 8547567181523007679}
   - component: {fileID: 6319131905489503274}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: 2,4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1323,7 +1413,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567181533827225}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Outer Ring.1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1356,7 +1446,7 @@ GameObject:
   - component: {fileID: 8547567181539789070}
   - component: {fileID: 8547567181539789056}
   - component: {fileID: 8547567181539789071}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody.1 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1435,7 +1525,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567181574410810}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Outer Ring.1 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1468,7 +1558,7 @@ GameObject:
   - component: {fileID: 8547567181593981325}
   - component: {fileID: 8547567181593981327}
   - component: {fileID: 8547567181593981326}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody.6 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1549,7 +1639,7 @@ GameObject:
   - component: {fileID: 8547567181612423752}
   - component: {fileID: 8547567181612423754}
   - component: {fileID: 8547567181612423753}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1630,7 +1720,7 @@ GameObject:
   - component: {fileID: 8547567181636322253}
   - component: {fileID: 8547567181636322255}
   - component: {fileID: 8547567181636322254}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody.4 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1711,7 +1801,7 @@ GameObject:
   - component: {fileID: 8547567181644164765}
   - component: {fileID: 8547567181644164767}
   - component: {fileID: 8547567181644164766}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: S1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1792,7 +1882,7 @@ GameObject:
   - component: {fileID: 8547567181657995535}
   - component: {fileID: 8547567181657995521}
   - component: {fileID: 8547567181657995520}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Spinner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1874,7 +1964,7 @@ GameObject:
   - component: {fileID: 8547567181701193940}
   - component: {fileID: 8547567181701193939}
   - component: {fileID: 2457809554215862962}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: 2,2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1968,7 +2058,7 @@ GameObject:
   - component: {fileID: 8547567181728410100}
   - component: {fileID: 8547567181728410102}
   - component: {fileID: 8547567181728410101}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 34
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2050,7 +2140,7 @@ GameObject:
   - component: {fileID: 8547567181761872424}
   - component: {fileID: 8547567181761872407}
   - component: {fileID: 607262194912397292}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: 3,1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2144,7 +2234,7 @@ GameObject:
   - component: {fileID: 8547567181764307005}
   - component: {fileID: 8547567181764307007}
   - component: {fileID: 8547567181764307006}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody.9 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2226,7 +2316,7 @@ GameObject:
   - component: {fileID: 8547567181771876213}
   - component: {fileID: 8547567181771876212}
   - component: {fileID: 2460043408046634926}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: 1,7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2318,7 +2408,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567181790321069}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Ball Bearings.1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2360,7 +2450,7 @@ GameObject:
   - component: {fileID: 8547567181818831107}
   - component: {fileID: 8547567181818831109}
   - component: {fileID: 8547567181818831108}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody.4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2441,7 +2531,7 @@ GameObject:
   - component: {fileID: 8547567181874551602}
   - component: {fileID: 8547567181874551604}
   - component: {fileID: 8547567181874551603}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2520,7 +2610,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567181876435972}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: HPC Casing.1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2553,7 +2643,7 @@ GameObject:
   - component: {fileID: 8547567181901243410}
   - component: {fileID: 8547567181901243412}
   - component: {fileID: 8547567181901243411}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 43
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2634,7 +2724,7 @@ GameObject:
   - component: {fileID: 8547567181901267079}
   - component: {fileID: 8547567181901267097}
   - component: {fileID: 8547567181901267096}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody.3 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2715,7 +2805,7 @@ GameObject:
   - component: {fileID: 8547567181911532007}
   - component: {fileID: 8547567181911532025}
   - component: {fileID: 8547567181911532024}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: C3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2796,7 +2886,7 @@ GameObject:
   - component: {fileID: 8547567181917373456}
   - component: {fileID: 8547567181917373458}
   - component: {fileID: 8547567181917373457}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2877,7 +2967,7 @@ GameObject:
   - component: {fileID: 8547567181917764892}
   - component: {fileID: 8547567181917764894}
   - component: {fileID: 8547567181917764893}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 40
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2956,7 +3046,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567181957093129}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Fastener Assembly.8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2992,7 +3082,7 @@ GameObject:
   - component: {fileID: 8547567181965528145}
   - component: {fileID: 8547567181965528147}
   - component: {fileID: 8547567181965528146}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody.6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3073,7 +3163,7 @@ GameObject:
   - component: {fileID: 8547567181973317430}
   - component: {fileID: 8547567181973317448}
   - component: {fileID: 8547567181973317431}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody.5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3154,7 +3244,7 @@ GameObject:
   - component: {fileID: 8547567181973759368}
   - component: {fileID: 8547567181973759370}
   - component: {fileID: 8547567181973759369}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody.8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3235,7 +3325,7 @@ GameObject:
   - component: {fileID: 8547567181983343226}
   - component: {fileID: 8547567181983343228}
   - component: {fileID: 8547567181983343227}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Stripe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3316,7 +3406,7 @@ GameObject:
   - component: {fileID: 8547567181999193306}
   - component: {fileID: 8547567181999193308}
   - component: {fileID: 8547567181999193307}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3395,7 +3485,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567182003653957}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Screw.1 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3426,7 +3516,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567182006565548}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Nut.1 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3459,7 +3549,7 @@ GameObject:
   - component: {fileID: 8547567182015521440}
   - component: {fileID: 8547567182015521442}
   - component: {fileID: 8547567182015521441}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody.5 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3540,7 +3630,7 @@ GameObject:
   - component: {fileID: 8547567182049319381}
   - component: {fileID: 8547567182049319383}
   - component: {fileID: 8547567182049319382}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3621,7 +3711,7 @@ GameObject:
   - component: {fileID: 8547567182079448740}
   - component: {fileID: 8547567182079448742}
   - component: {fileID: 8547567182079448741}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 38
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3700,7 +3790,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567182096271039}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Fastener Assembly.4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3736,7 +3826,7 @@ GameObject:
   - component: {fileID: 8547567182129606972}
   - component: {fileID: 8547567182129606974}
   - component: {fileID: 8547567182129606973}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 35
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3815,7 +3905,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567182152155452}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Nut.1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3846,7 +3936,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567182152164989}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Line2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3885,7 +3975,7 @@ GameObject:
   - component: {fileID: 8547567182181981263}
   - component: {fileID: 8547567182181981249}
   - component: {fileID: 8547567182181981248}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody.2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3964,7 +4054,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567182188863241}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Washer.2 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3997,7 +4087,7 @@ GameObject:
   - component: {fileID: 8547567182198523428}
   - component: {fileID: 8547567182198523430}
   - component: {fileID: 8547567182198523429}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Tip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4078,7 +4168,7 @@ GameObject:
   - component: {fileID: 8547567182200672355}
   - component: {fileID: 8547567182200672357}
   - component: {fileID: 8547567182200672356}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody.3 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4157,7 +4247,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567182228455158}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: 3,3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4191,7 +4281,7 @@ GameObject:
   - component: {fileID: 8547567182236050146}
   - component: {fileID: 8547567182236050148}
   - component: {fileID: 8547567182236050147}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4273,7 +4363,7 @@ GameObject:
   - component: {fileID: 8547567182264197592}
   - component: {fileID: 8547567182264197575}
   - component: {fileID: 8541836673304367291}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: 1,6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4365,7 +4455,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567182271093218}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Screw.1 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4396,7 +4486,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567182274290221}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Nut.1 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4429,7 +4519,7 @@ GameObject:
   - component: {fileID: 8547567182291407280}
   - component: {fileID: 8547567182291407282}
   - component: {fileID: 8547567182291407281}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4508,7 +4598,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567182298401861}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Outer Ring.1 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4539,7 +4629,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567182335616120}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Washer.2 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4570,7 +4660,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567182340851786}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Washer.1 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4603,7 +4693,7 @@ GameObject:
   - component: {fileID: 8547567182346319590}
   - component: {fileID: 8547567182346319608}
   - component: {fileID: 8547567182346319591}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 36
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4684,7 +4774,7 @@ GameObject:
   - component: {fileID: 8547567182354667003}
   - component: {fileID: 8547567182354667005}
   - component: {fileID: 8547567182354667004}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody.10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4763,7 +4853,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567182355325830}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: 2,6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4798,7 +4888,7 @@ GameObject:
   - component: {fileID: 8547567182388097841}
   - component: {fileID: 8547567182388097843}
   - component: {fileID: 8547567182388097842}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: One-Piece Fan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4879,7 +4969,7 @@ GameObject:
   - component: {fileID: 8547567182392497653}
   - component: {fileID: 8547567182392497655}
   - component: {fileID: 8547567182392497654}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4960,7 +5050,7 @@ GameObject:
   - component: {fileID: 8547567182401204921}
   - component: {fileID: 8547567182401204923}
   - component: {fileID: 8547567182401204922}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 48
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5041,7 +5131,7 @@ GameObject:
   - component: {fileID: 8547567182410076536}
   - component: {fileID: 8547567182410076538}
   - component: {fileID: 8547567182410076537}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: C4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5122,7 +5212,7 @@ GameObject:
   - component: {fileID: 8547567182414352000}
   - component: {fileID: 8547567182414352002}
   - component: {fileID: 8547567182414352001}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: S3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5201,7 +5291,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567182419488348}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Washer.2 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5232,7 +5322,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567182424975684}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: HPC.1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5272,7 +5362,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567182429056633}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Washer.1 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5305,7 +5395,7 @@ GameObject:
   - component: {fileID: 8547567182443667395}
   - component: {fileID: 8547567182443667397}
   - component: {fileID: 8547567182443667396}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody.1 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5386,7 +5476,7 @@ GameObject:
   - component: {fileID: 8547567182463270087}
   - component: {fileID: 8547567182463270105}
   - component: {fileID: 8547567182463270104}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5465,7 +5555,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567182464832699}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Screw.1 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5496,7 +5586,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567182474389265}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: InitScene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5531,7 +5621,7 @@ GameObject:
   - component: {fileID: 8547567182484172385}
   - component: {fileID: 8547567182484172387}
   - component: {fileID: 8547567182484172386}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody.4 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5610,7 +5700,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567182536764339}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Washer.1 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5641,7 +5731,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567182547660567}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: 2,5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5677,7 +5767,7 @@ GameObject:
   - component: {fileID: 8547567182558672584}
   - component: {fileID: 8547567182558672567}
   - component: {fileID: 2618708944286889502}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: 1,4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5769,7 +5859,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567182561960705}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Washer.1 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5802,7 +5892,7 @@ GameObject:
   - component: {fileID: 8547567182567602069}
   - component: {fileID: 8547567182567602071}
   - component: {fileID: 8547567182567602070}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody.1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5883,8 +5973,7 @@ GameObject:
   - component: {fileID: 8547567182567797898}
   - component: {fileID: 8547567182567797900}
   - component: {fileID: 8547567182567797899}
-  - component: {fileID: 7601482815977113080}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: 1,2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5899,11 +5988,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8547567182567797897}
   m_LocalRotation: {x: -0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0.40688077, y: 0.5271538, z: -0.11701603}
+  m_LocalPosition: {x: 0, y: 0.285, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 8547567182962757171}
-  m_RootOrder: 1
+  m_Father: {fileID: 4716466448885787541}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 90}
 --- !u!33 &8547567182567797900
 MeshFilter:
@@ -5954,19 +6043,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7601482815977113080
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8547567182567797897}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.006229669, y: 0.09823623, z: 0.10851829}
-  m_Center: {x: -0.28446555, y: 0.0051717777, z: 0.00006152131}
 --- !u!1 &8547567182586435901
 GameObject:
   m_ObjectHideFlags: 0
@@ -5979,7 +6055,7 @@ GameObject:
   - component: {fileID: 8547567182586435888}
   - component: {fileID: 8547567182586435903}
   - component: {fileID: 3524231124759257029}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: 4,1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6074,7 +6150,7 @@ GameObject:
   - component: {fileID: 8547567182588042791}
   - component: {fileID: 8547567182588042809}
   - component: {fileID: 8547567182588042808}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody.8 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6155,7 +6231,7 @@ GameObject:
   - component: {fileID: 8547567182598894072}
   - component: {fileID: 8547567182598894074}
   - component: {fileID: 8547567182598894073}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 52
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6236,7 +6312,7 @@ GameObject:
   - component: {fileID: 8547567182631289448}
   - component: {fileID: 8547567182631289450}
   - component: {fileID: 8547567182631289449}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 46
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6315,7 +6391,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567182637401974}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Fastener Assembly.5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6352,7 +6428,7 @@ GameObject:
   - component: {fileID: 8547567182637735392}
   - component: {fileID: 8547567182637735407}
   - component: {fileID: 5633990320376965844}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: 1,3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6446,7 +6522,7 @@ GameObject:
   - component: {fileID: 8547567182642589964}
   - component: {fileID: 8547567182642589966}
   - component: {fileID: 8547567182642589965}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody.6 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6527,7 +6603,7 @@ GameObject:
   - component: {fileID: 8547567182644043459}
   - component: {fileID: 8547567182644043461}
   - component: {fileID: 8547567182644043460}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 14 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6608,7 +6684,7 @@ GameObject:
   - component: {fileID: 8547567182653653393}
   - component: {fileID: 8547567182653653395}
   - component: {fileID: 8547567182653653394}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 51
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6689,7 +6765,7 @@ GameObject:
   - component: {fileID: 8547567182681798587}
   - component: {fileID: 8547567182681798589}
   - component: {fileID: 8547567182681798588}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6770,7 +6846,7 @@ GameObject:
   - component: {fileID: 8547567182690837925}
   - component: {fileID: 8547567182690837927}
   - component: {fileID: 8547567182690837926}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody.10 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6851,7 +6927,7 @@ GameObject:
   - component: {fileID: 8547567182693706047}
   - component: {fileID: 8547567182693706033}
   - component: {fileID: 8547567182693706032}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody.8 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6930,7 +7006,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567182698076798}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Inner Ring.1 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6963,7 +7039,7 @@ GameObject:
   - component: {fileID: 8547567182699260504}
   - component: {fileID: 8547567182699260506}
   - component: {fileID: 8547567182699260505}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 37
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7042,7 +7118,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567182710759830}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Inner Ring.1 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7075,7 +7151,7 @@ GameObject:
   - component: {fileID: 8547567182718256323}
   - component: {fileID: 8547567182718256325}
   - component: {fileID: 8547567182718256324}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody.5 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7154,7 +7230,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567182729938365}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Ball Bearings.1 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7196,7 +7272,7 @@ GameObject:
   - component: {fileID: 8547567182731051317}
   - component: {fileID: 8547567182731051319}
   - component: {fileID: 8547567182731051318}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: C1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7275,7 +7351,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567182740752532}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Fastener Assembly.7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7309,7 +7385,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567182741299478}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: High Pressure Spool.1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7351,7 +7427,7 @@ GameObject:
   - component: {fileID: 8547567182750605317}
   - component: {fileID: 8547567182750605319}
   - component: {fileID: 8547567182750605318}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 47
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7430,7 +7506,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567182762398647}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Fastener Assembly.6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7466,7 +7542,7 @@ GameObject:
   - component: {fileID: 8547567182763021837}
   - component: {fileID: 8547567182763021839}
   - component: {fileID: 8547567182763021838}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 41
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7545,7 +7621,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567182779228123}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Screw.1 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7578,7 +7654,7 @@ GameObject:
   - component: {fileID: 8547567182794425895}
   - component: {fileID: 8547567182794425913}
   - component: {fileID: 8547567182794425912}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 45
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7657,7 +7733,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567182799079443}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Fan.1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7693,7 +7769,7 @@ GameObject:
   - component: {fileID: 8547567182808904949}
   - component: {fileID: 8547567182808904951}
   - component: {fileID: 8547567182808904950}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody.9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7774,7 +7850,7 @@ GameObject:
   - component: {fileID: 8547567182854129843}
   - component: {fileID: 8547567182854129845}
   - component: {fileID: 8547567182854129844}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: S4 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7853,7 +7929,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567182855827085}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Ball Bearings.1 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7895,7 +7971,7 @@ GameObject:
   - component: {fileID: 8547567182870113306}
   - component: {fileID: 8547567182870113308}
   - component: {fileID: 8547567182870113307}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 28
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7976,7 +8052,7 @@ GameObject:
   - component: {fileID: 8547567182873757664}
   - component: {fileID: 8547567182873757666}
   - component: {fileID: 8547567182873757665}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody.2 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8057,7 +8133,7 @@ GameObject:
   - component: {fileID: 8547567182889876084}
   - component: {fileID: 8547567182889876086}
   - component: {fileID: 8547567182889876085}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 29
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8136,7 +8212,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567182891034701}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Washer.2 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8169,7 +8245,7 @@ GameObject:
   - component: {fileID: 8547567182897040728}
   - component: {fileID: 8547567182897040730}
   - component: {fileID: 8547567182897040729}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 27
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8248,7 +8324,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567182935009883}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Washer.2 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8281,7 +8357,7 @@ GameObject:
   - component: {fileID: 8547567182961500595}
   - component: {fileID: 8547567182961500597}
   - component: {fileID: 8547567182961500596}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 30
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8360,7 +8436,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567182962757171}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Line1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8378,8 +8454,8 @@ Transform:
   m_LocalPosition: {x: 0.072119236, y: 0.023046196, z: -0.20798396}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 8547567183082700662}
-  - {fileID: 8547567182567797898}
+  - {fileID: 7350652497954759198}
+  - {fileID: 4716466448885787541}
   - {fileID: 8547567182637735406}
   - {fileID: 8547567182558672566}
   - {fileID: 8547567181359528106}
@@ -8400,7 +8476,7 @@ GameObject:
   - component: {fileID: 8547567183002163143}
   - component: {fileID: 8547567183002163161}
   - component: {fileID: 8547567183002163160}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody.3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8481,7 +8557,7 @@ GameObject:
   - component: {fileID: 8547567183020443028}
   - component: {fileID: 8547567183020443030}
   - component: {fileID: 8547567183020443029}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8560,7 +8636,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567183046247989}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Washer.1 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8591,7 +8667,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567183046983561}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Washer.1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8624,7 +8700,7 @@ GameObject:
   - component: {fileID: 8547567183051818344}
   - component: {fileID: 8547567183051818346}
   - component: {fileID: 8547567183051818345}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody.10 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8703,7 +8779,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567183065595228}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Washer.1 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8736,8 +8812,7 @@ GameObject:
   - component: {fileID: 8547567183082700662}
   - component: {fileID: 8547567183082700680}
   - component: {fileID: 8547567183082700663}
-  - component: {fileID: 477805080899047939}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: 1,1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8752,10 +8827,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8547567183082700661}
   m_LocalRotation: {x: -0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0.5635838, y: 0.5350812, z: -0.11713417}
+  m_LocalPosition: {x: 0, y: 0.293, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 8547567182962757171}
+  m_Father: {fileID: 7350652497954759198}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!33 &8547567183082700680
@@ -8807,19 +8882,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &477805080899047939
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8547567183082700661}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.0065000057, y: 0.10597048, z: 0.10586109}
-  m_Center: {x: -0.29159, y: 0, z: 0}
 --- !u!1 &8547567183087224518
 GameObject:
   m_ObjectHideFlags: 0
@@ -8831,7 +8893,7 @@ GameObject:
   - component: {fileID: 8547567183087224519}
   - component: {fileID: 8547567183087224537}
   - component: {fileID: 8547567183087224536}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody.2 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8910,7 +8972,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567183114115296}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Line3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8946,7 +9008,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567183145931352}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: HPT.1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8979,7 +9041,7 @@ GameObject:
   - component: {fileID: 8547567183147806618}
   - component: {fileID: 8547567183147806620}
   - component: {fileID: 8547567183147806619}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: 4,2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9060,7 +9122,7 @@ GameObject:
   - component: {fileID: 8547567183151475887}
   - component: {fileID: 8547567183151475873}
   - component: {fileID: 8547567183151475872}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody.7 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9141,7 +9203,7 @@ GameObject:
   - component: {fileID: 8547567183185937866}
   - component: {fileID: 8547567183185937868}
   - component: {fileID: 8547567183185937867}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody.7 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9220,7 +9282,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567183201103928}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Screw.1 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9253,7 +9315,7 @@ GameObject:
   - component: {fileID: 8547567183204783166}
   - component: {fileID: 8547567183204783152}
   - component: {fileID: 8547567183204783167}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 26
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9332,7 +9394,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567183208540112}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Washer.1 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9363,7 +9425,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567183211075151}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Fastener Assembly.9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9399,7 +9461,7 @@ GameObject:
   - component: {fileID: 8547567183213885974}
   - component: {fileID: 8547567183213885992}
   - component: {fileID: 8547567183213885975}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9480,7 +9542,7 @@ GameObject:
   - component: {fileID: 8547567183215805717}
   - component: {fileID: 8547567183215805719}
   - component: {fileID: 8547567183215805718}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9559,7 +9621,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567183215992751}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Washer.2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9590,7 +9652,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567183219948184}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: 3,4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9624,7 +9686,7 @@ GameObject:
   - component: {fileID: 8547567183232558967}
   - component: {fileID: 8547567183232558985}
   - component: {fileID: 8547567183232558984}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: S2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9705,7 +9767,7 @@ GameObject:
   - component: {fileID: 8547567183246483421}
   - component: {fileID: 8547567183246483423}
   - component: {fileID: 8547567183246483422}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody.7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9786,7 +9848,7 @@ GameObject:
   - component: {fileID: 8547567183265385607}
   - component: {fileID: 8547567183265385625}
   - component: {fileID: 8547567183265385624}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9865,7 +9927,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567183267606032}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Washer.2 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9898,7 +9960,7 @@ GameObject:
   - component: {fileID: 8547567183277134310}
   - component: {fileID: 8547567183277134328}
   - component: {fileID: 8547567183277134311}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: C5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9979,7 +10041,7 @@ GameObject:
   - component: {fileID: 8547567183279159945}
   - component: {fileID: 8547567183279159947}
   - component: {fileID: 8547567183279159946}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 44
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10060,7 +10122,7 @@ GameObject:
   - component: {fileID: 8547567183285417745}
   - component: {fileID: 8547567183285417747}
   - component: {fileID: 8547567183285417746}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 50
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10141,7 +10203,7 @@ GameObject:
   - component: {fileID: 8547567183314216589}
   - component: {fileID: 8547567183314216591}
   - component: {fileID: 8547567183314216590}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody 31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10223,7 +10285,7 @@ GameObject:
   - component: {fileID: 8547567183324167714}
   - component: {fileID: 8547567183324167713}
   - component: {fileID: 7619886793664435992}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: 2,1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10318,7 +10380,7 @@ GameObject:
   - component: {fileID: 8547567183362074464}
   - component: {fileID: 8547567183362074479}
   - component: {fileID: 8034581839445421218}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: 2,3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10410,7 +10472,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567183382168897}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Nut.1 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10443,7 +10505,7 @@ GameObject:
   - component: {fileID: 8547567183389337359}
   - component: {fileID: 8547567183389337345}
   - component: {fileID: 8547567183389337344}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PartBody.9 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10522,7 +10584,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567183391748793}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Screw.1 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10553,7 +10615,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567183394810186}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Low Pressure Shaft (Front).1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10584,7 +10646,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8547567183456792887}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Nut.1 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10617,7 +10679,7 @@ GameObject:
   - component: {fileID: 8148619683931842458}
   - component: {fileID: 5096506842936010815}
   - component: {fileID: 7016215355741478133}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10698,9 +10760,10 @@ GameObject:
   - component: {fileID: 3495878541907654506}
   - component: {fileID: 1500105695200186679}
   - component: {fileID: 7801689127315784232}
-  m_Layer: 15
+  - component: {fileID: 2096260365788666038}
+  m_Layer: 0
   m_Name: ARAssemblyContent
-  m_TagString: Untagged
+  m_TagString: EngineAssemblyContent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10772,3 +10835,20 @@ MonoBehaviour:
   showGizmos: 0
   showOverlay: 0
   overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+--- !u!114 &2096260365788666038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9076885700055524675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79985c7a20c04a40a55c9338af0c4b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  componentAssemblySequence: []
+  deviceList:
+  - {fileID: 1426508085618178244}
+  - {fileID: 5782890646852506339}
+  waikeList: []

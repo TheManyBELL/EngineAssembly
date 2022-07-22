@@ -61,7 +61,7 @@ public class HoloLabelController : MonoBehaviour
     void Awake()
     {
         assemblyInfo = GetComponent<AssemblyInfo>();
-        deviceController = GetComponent<DeviceController>();
+        // deviceController = GetComponent<DeviceController>();
 
         labelObjectList = new List<GameObject>();
         deviceList = new List<GameObject>();
@@ -76,15 +76,25 @@ public class HoloLabelController : MonoBehaviour
 
     private void Start()
     {
-        deviceList = assemblyInfo.deviceList;
+        // deviceList = assemblyInfo.deviceList;
         // CreateLabelForTargetList(deviceList);
-        CreateLabelForTargetListByScript(deviceList);
+        // CreateLabelForTargetListByScript(deviceList);
     }
 
     // Update is called once per frame
     void Update()
     {
-        LabelVisibilityControl();
+        if (deviceList.Count == 0 && assemblyInfo.deviceList.Count!=0)
+        {
+            deviceList = assemblyInfo.deviceList;
+            Debug.Log("HoloLabelController 已经获取 deviceList");
+            CreateLabelForTargetListByScript(deviceList);
+        }
+        if(deviceList.Count != 0)
+        {
+            LabelVisibilityControl();
+        }
+        
     }
 
     /// <summary>

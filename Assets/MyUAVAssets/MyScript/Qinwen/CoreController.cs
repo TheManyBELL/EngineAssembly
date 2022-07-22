@@ -25,7 +25,6 @@ public class CoreController : MonoBehaviour
     /// author:qinwen
     /// note:引擎项目新增代码
     /// </summary>
-    public GameObject engineSceneContent;
 
     // Start is called before the first frame update
     void Start()
@@ -185,15 +184,6 @@ public class CoreController : MonoBehaviour
     /// 引擎装配新增代码
     /// </summary>
     
-    // 控制装配场景的可见性
-    public void OnPressHideButton()
-    {
-        // 0:default
-        // 11:ARCameraUnvisible
-        if(engineSceneContent.layer == 0) { engineSceneContent.layer = 11; }
-        else if (engineSceneContent.layer == 11) { engineSceneContent.layer = 0; }
-        
-    }
 
 
 }
