@@ -1,0 +1,43 @@
+// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel CSMain
+
+// Create a RenderTexture with enableRandomWrite flag and set it
+// with cs.SetTexture
+Texture2D Tex;
+RWTexture2D<float> Result;
+
+[numthreads(8,8,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    // TODO: insert actual code here!
+    float dr = Tex[id.xy].r, dg = Tex[id.xy].g, db = Tex[id.xy].b;
+    float cmax = max(dr, max(dg, db)), cmin = min(dr, min(dg, db));
+    float delta = cmax - cmin;
+
+    float H = 0, S = 0, V = cmax * 255.0f;
+    if (cmax != 0) {
+        S = delta / cmax * 255.0f;
+    }
+
+    if (delta == 0) {
+        H = 0;
+    }
+    else if (cmax == dr) {
+        H = (60 * ((dg - db) / delta) + 360) % 360;
+    }
+    else if (cmax == dg) {
+        H = (60 * ((db - dr) / delta) + 120) % 360;
+    }
+    else if (cmax == db) {
+        H = (60 * ((dr - dg) / delta) + 240) % 360;
+    }
+
+    H = H / 2;
+
+    if (((H > 0 && H < 10) || (H > 156 && H < 180)) && S > 43 && S < 255 && V > 46 && V < 255)   // 红色
+    // if (H > 11 && H < 25)    // 橙色
+    // if (H > 100 && H < 124 && S > 43 && S < 255 && V > 46 && V < 255)    // 蓝色
+        Result[id.xy] = 1.0;
+    else
+        Result[id.xy] = 0.0;
+}
