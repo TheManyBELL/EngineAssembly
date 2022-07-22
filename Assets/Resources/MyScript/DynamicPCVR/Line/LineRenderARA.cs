@@ -20,6 +20,9 @@ public class LineRenderARA : MonoBehaviour
     private GameObject virtualPart = null;
     public Material virtualPartMaterial; // from inspector
 
+    public GameObject engineAssemblyContent = null;
+    private MainController mainController = null;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,13 +30,27 @@ public class LineRenderARA : MonoBehaviour
         lines = new List<GameObject>();
 
         // 从SmartSignA获得零件列表
-        enginePartsList = GetComponentInParent<EngineAssemblyInfo>().EnginePartsList;
+        // enginePartsList = GetComponentInParent<EngineAssemblyInfo>().EnginePartsList;
 
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        // 查找
+        if (engineAssemblyContent == null)
+        {
+            engineAssemblyContent = GameObject.FindGameObjectWithTag("EngineAssemblyContent");
+            if (engineAssemblyContent)
+            {
+                Debug.Log("lineRenderARA 已找到 engineAssemblyContent");
+                mainController = engineAssemblyContent.GetComponent<MainController>();
+                enginePartsList = mainController.deviceList;
+            }
+        }
+
+
         line_index = 0;
         for (int i = 0; i < mirrorController.syncArrowList.Count; ++i)
         {
@@ -55,7 +72,7 @@ public class LineRenderARA : MonoBehaviour
                     {
                         virtualPart = Instantiate(partsObj);
                         virtualPart.transform.position = indicator.position;
-                        virtualPart.GetComponent<MeshRenderer>().material = virtualPartMaterial;
+                        virtualPart.GetComponentInChildren<MeshRenderer>().material = virtualPartMaterial;
                         Debug.Log("AR客户端新增当前指示物");
                     }
                 }

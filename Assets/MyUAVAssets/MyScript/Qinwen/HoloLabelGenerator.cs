@@ -54,7 +54,8 @@ public class HoloLabelGenerator : MonoBehaviour
         // 设定锚点（通过包围盒）
         GameObject anchor = holoLabel.transform.GetChild(0).gameObject;
 
-        anchor.transform.position = getAnchorPosition();
+        // anchor.transform.position = getAnchorPosition();
+        anchor.transform.position = this.transform.position;
 
         GameObject pivot = holoLabel.transform.GetChild(1).gameObject;
         pivot.transform.position = anchor.transform.position + pivotDirect * pivotDistance;

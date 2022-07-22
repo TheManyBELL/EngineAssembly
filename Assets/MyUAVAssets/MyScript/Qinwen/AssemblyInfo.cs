@@ -40,7 +40,7 @@ public class AssemblyInfo : MonoBehaviour
         // ≤È’“
         if(engineAssemblyContent == null)
         {
-            engineAssemblyContent = GameObject.FindGameObjectWithTag("EngineAssembluContent");
+            engineAssemblyContent = GameObject.FindGameObjectWithTag("EngineAssemblyContent");
             if (engineAssemblyContent)
             {
                 Debug.Log("Assemblyinfo “—’“µΩ engineAssemblyContent");

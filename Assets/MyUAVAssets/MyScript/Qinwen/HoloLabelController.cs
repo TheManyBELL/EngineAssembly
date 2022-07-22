@@ -87,7 +87,7 @@ public class HoloLabelController : MonoBehaviour
         if (deviceList.Count == 0 && assemblyInfo.deviceList.Count!=0)
         {
             deviceList = assemblyInfo.deviceList;
-            Debug.Log("HoloLabelController 已经获取 deviceList");
+            Debug.Log("HoloLabelController 已经获取 deviceList"+ deviceList.Count);
             CreateLabelForTargetListByScript(deviceList);
         }
         if(deviceList.Count != 0)
@@ -153,6 +153,7 @@ public class HoloLabelController : MonoBehaviour
     {
         foreach(GameObject target in targetList)
         {
+            Debug.Log("in create: "+target.name);
             GameObject holoLabel;
             HoloLabelGenerator holoLabelGenerator;
             if (target.GetComponent<HoloLabelGenerator>())
@@ -183,7 +184,8 @@ public class HoloLabelController : MonoBehaviour
             GameObject curChild = deviceList[i];
             if (curChild.activeSelf == false) { continue; }
             GameObject curLabel = labelObjectList[i];
-            Vector3 childCenter = curChild.transform.Find("MeshCenter").position;
+            // Vector3 childCenter = curChild.transform.Find("MeshCenter").position;
+            Vector3 childCenter = curChild.transform.position;
 
             // 设备中心是否在用户视口内
             bool isDeviceInCameraView = IsPositionInCameraView(childCenter);

@@ -14653,7 +14653,8 @@ MonoBehaviour:
   straightLineMaterial: {fileID: 0}
   straightLineThickness: 0.01
   origin_line: 1
-  virtualPartMaterial: {fileID: 0}
+  virtualPartMaterial: {fileID: 2100000, guid: ad48fa2ec6258db40ba8779d61d5a0ab, type: 2}
+  engineAssemblyContent: {fileID: 0}
 --- !u!1 &4617206983405905877
 GameObject:
   m_ObjectHideFlags: 0
