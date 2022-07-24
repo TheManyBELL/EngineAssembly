@@ -1296,7 +1296,7 @@ MonoBehaviour:
   - {fileID: 9076885700055524675, guid: c1a4c7a2eb2bbcb4984cbe5dc3f2c2ba, type: 3}
   vrMode: 0
   arMode: 1
-  syncEnv_start: 5
+  syncEnv_start: 4
   syncEnv_end: 5
 --- !u!114 &1046075961
 MonoBehaviour:
