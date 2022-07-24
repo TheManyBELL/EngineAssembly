@@ -65,6 +65,9 @@ public class HoloLabelGenerator : MonoBehaviour
 
         holoLabel.SetActive(false);
 
+        // 设置标签层级为深度相机不可见
+        ChangeLayer(holoLabel.transform, LayerMask.NameToLayer("DepthCameraUnivisible"));
+
         return holoLabel;
     }
 
@@ -78,5 +81,26 @@ public class HoloLabelGenerator : MonoBehaviour
         else if (isOnLeft) { anchorPosition = meshCenter.transform.position + new Vector3(-meshCenterBounds.size.x / 2f, 0, 0); }
         else if (isOnRight) { anchorPosition = meshCenter.transform.position + new Vector3(meshCenterBounds.size.x / 2f, 0, 0); }
         return anchorPosition;
+    }
+
+    /// <summary>
+    /// 同时修改物体及其所有子物体层级
+    /// </summary>
+    /// <param name="transform"></param>
+    /// <param name="layer"></param>
+    private void ChangeLayer(Transform transform, int layer)
+    {
+        if (transform.childCount > 0)//如果子物体存在
+        {
+            for (int i = 0; i < transform.childCount; i++)//遍历子物体是否还有子物体
+            {
+                ChangeLayer(transform.GetChild(i), layer);//这里是只将最后一个无子物体的对象设置层级
+            }
+            transform.gameObject.layer = layer;//将存在的子物体遍历结束后需要把当前子物体节点进行层级设置
+        }
+        else					//无子物体
+        {
+            transform.gameObject.layer = layer;
+        }
     }
 }
