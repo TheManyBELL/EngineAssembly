@@ -22,8 +22,24 @@ public class MirrorControllerA : NetworkBehaviour
     [SyncVar]
     public DPCIndicator auxiliaryIndicator = new DPCIndicator() { name = null,position = new Vector3() };
 
+    // 线段指示点信息
+    [SyncVar]
+    public DPCPreSelect segmentPreSelect = new DPCPreSelect() { startPoint = new Vector3(), endPoint = new Vector3(), state = PreSelectMode.CLOSE };
+
 
     #region command
+
+    /// <summary>
+    /// 2022.7.28
+    /// qinwen
+    /// </summary>
+    /// <param name="newSegmentPreSelect"></param>
+    [Command]
+    public void CmdUpdateSegmentPreSelect(DPCPreSelect newSegmentPreSelect)
+    {
+        segmentPreSelect = newSegmentPreSelect;
+        Debug.Log("[server] newSegmentPreSelect updated");
+    }
 
     /// <summary>
     /// 2022.7.21

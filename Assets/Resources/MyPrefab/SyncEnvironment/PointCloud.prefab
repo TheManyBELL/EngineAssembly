@@ -168,8 +168,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 368f0396127bdce47ba7df473f28b0fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hostIP_ar: 192.168.38.2
-  hostIP_vr: 192.168.38.10
+  hostIP_ar: 219.224.167.173
+  hostIP_vr: 219.224.167.246
   hostIP: 
 --- !u!1001 &8573055439531478071
 PrefabInstance:

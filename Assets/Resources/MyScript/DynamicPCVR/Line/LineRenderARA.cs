@@ -72,6 +72,7 @@ public class LineRenderARA : MonoBehaviour
                     {
                         virtualPart = Instantiate(partsObj);
                         virtualPart.transform.position = indicator.position;
+                        virtualPart.GetComponent<BoxCollider>().enabled = false;
 
                         ChangeLayer(virtualPart.transform, LayerMask.NameToLayer("DepthCameraUnivisible"));
                         ChangeMaterial(virtualPart.transform, virtualPartMaterial);

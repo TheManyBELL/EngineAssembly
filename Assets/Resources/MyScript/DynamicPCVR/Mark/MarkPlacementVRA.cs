@@ -138,9 +138,10 @@ public class MarkPlacementVRA : MonoBehaviour
 
         int currentPointNumber = currentPointList.Count;
 
-        // 如果此时是第一个点，则再次发射射线检测碰撞物体，碰撞到物体后显示物体的名字
+        // 如果此时是第一个点
         if(currentPointNumber == 0)
         {
+            // 流程1：再次发射射线检测碰撞物体，碰撞到物体后更新vrSelectedPart
             Ray raycast = new Ray(rightHand.transform.position, rightHand.transform.forward);
             RaycastHit hit;
             bool bHit = Physics.Raycast(raycast, out hit, LayerMask.NameToLayer("DepthCameraOnly")); //  
@@ -150,18 +151,37 @@ public class MarkPlacementVRA : MonoBehaviour
             }
             else
             {
-                vrSelectedPart = hit.collider.gameObject;
+                vrSelectedPart = hit.collider.gameObject; // 本段代码核心
                 Debug.Log("选中的零件是: "+hit.collider.gameObject.name);
             }
+
+            // 流程2：向服务器提交初次选点信息
+            myController.CmdUpdateSegmentPreSelect(new DPCPreSelect()
+            {
+                startPoint = newPoint,
+                endPoint = new Vector3(),
+                state = PreSelectMode.STARTSELECTED
+            });
+        }
+
+        // 如果此时是第二个点,更新终点坐标
+        if (currentPointNumber == 1)
+        {
+            myController.CmdUpdateSegmentPreSelect(new DPCPreSelect()
+            {
+                startPoint = currentPointList[0],
+                endPoint = newPoint,
+                state = PreSelectMode.ENDSELECTED
+            });
         }
 
         if (currentPointNumber < 2)
         {
-            GameObject pointobj = Instantiate(drawpointprefab);
-            pointobj.transform.position = newPoint;
-            pointobj.layer = LayerMask.NameToLayer("DepthCameraUnivisible");
-            drawpointList.Add(pointobj);
-            Debug.Log("current point number is:" + currentPointNumber + ", add new point");
+            //GameObject pointobj = Instantiate(drawpointprefab);
+            //pointobj.transform.position = newPoint;
+            //pointobj.layer = LayerMask.NameToLayer("DepthCameraUnivisible");
+            //drawpointList.Add(pointobj);
+            //Debug.Log("current point number is:" + currentPointNumber + ", add new point");
             currentPointList.Add(newPoint);
 
         }
@@ -181,7 +201,7 @@ public class MarkPlacementVRA : MonoBehaviour
             {
                 virtualPart = Instantiate(vrSelectedPart);
                 virtualPart.transform.position = new Vector3(currentPointList[1].x, currentPointList[1].y+virtualPart_offset_y, currentPointList[1].z);
-
+                virtualPart.GetComponent<BoxCollider>().enabled = false;
                 ChangeLayer(virtualPart.transform, LayerMask.NameToLayer("DepthCameraUnivisible"));
                 ChangeMaterial(virtualPart.transform, virtualPartMaterial);
                 myController.CmdUpdateDPCIndicator(new DPCIndicator()
@@ -191,13 +211,21 @@ public class MarkPlacementVRA : MonoBehaviour
                 });
             }
 
+            // 2022.7.28 已选中两个点并确认，关闭辅助选点
+            myController.CmdUpdateSegmentPreSelect(new DPCPreSelect()
+            {
+                startPoint = new Vector3(),
+                endPoint = new Vector3(),
+                state = PreSelectMode.CLOSE
+            });
+
             // 清空临时变量
             currentPointList.Clear();
-            for (int i = 0; i < drawpointList.Count; i++)
-            {
-                Destroy(drawpointList[i]);
-            }
-            drawpointList.Clear();
+            //for (int i = 0; i < drawpointList.Count; i++)
+            //{
+            //    Destroy(drawpointList[i]);
+            //}
+            //drawpointList.Clear();
         }
     }
 

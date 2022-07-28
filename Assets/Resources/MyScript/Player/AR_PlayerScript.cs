@@ -41,8 +41,9 @@ public class AR_PlayerScript : NetworkBehaviour
     public override void OnStartClient()
     {
         base.OnStartClient();
-        rightHandLineRenderer = rightHandController.GetComponent<LineRenderer>();
-        leftHandLineRenderer = leftHandController.GetComponent<LineRenderer>();
+        // 2022.7.27 暂时关闭
+        // rightHandLineRenderer = rightHandController.GetComponent<LineRenderer>();
+        // leftHandLineRenderer = leftHandController.GetComponent<LineRenderer>();
     }
 
     public override void OnStartLocalPlayer()
@@ -76,16 +77,19 @@ public class AR_PlayerScript : NetworkBehaviour
             this.GetComponent<Transform>().position = holoPosition;
             this.GetComponent<Transform>().eulerAngles = holoRotation;
 
-            ARGetRayInfo();
+            // 2022.7.27 暂时关闭
+            // ARGetRayInfo();
             // Debug.Log("Client:"+rightHand.startPoint+","+rightHand.endPoint);
 
         }
-        // 不需要是本地用户直接画线
+        // 不是本地用户直接画线
+        // 2022.7.27 暂时关闭该功能
+        /*
         if (!isLocalPlayer && isClient)
         {
             PaintRayBy2Position(rightHand.startPoint, rightHand.endPoint, rightHand.isActive, rightHandLineRenderer, HandMode.right);
             PaintRayBy2Position(leftHand.startPoint, leftHand.endPoint, leftHand.isActive, leftHandLineRenderer, HandMode.left);
-        }
+        }*/
 
 
     }

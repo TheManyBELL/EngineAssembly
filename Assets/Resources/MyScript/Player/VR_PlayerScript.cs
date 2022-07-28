@@ -77,11 +77,13 @@ public class VR_PlayerScript : NetworkBehaviour
         }
         if (!isLocalPlayer && isClient)
         {
-            PaintRayBy2Position(rightHand.startPoint, rightHand.endPoint, rightHand.isActive, rightHandLineRenderer,HandMode.right);
-            PaintRayBy2Position(leftHand.startPoint, leftHand.endPoint, leftHand.isActive, leftHandLineRenderer,HandMode.left);
+            //PaintRayBy2Position(rightHand.startPoint, rightHand.endPoint, rightHand.isActive, rightHandLineRenderer,HandMode.right);
+            //PaintRayBy2Position(leftHand.startPoint, leftHand.endPoint, leftHand.isActive, leftHandLineRenderer,HandMode.left);
+            DrawLineBy2Position(rightHand.startPoint, rightHand.endPoint, rightHand.isActive, rightHandLineRenderer,HandMode.right);
+            DrawLineBy2Position(leftHand.startPoint, leftHand.endPoint, leftHand.isActive, leftHandLineRenderer,HandMode.left);
         }
 
-        
+
 
     }
 
@@ -186,4 +188,26 @@ public class VR_PlayerScript : NetworkBehaviour
             tempCircle.transform.position = hit.point + hit.normal * circleDistanceRate;
         }
     }
+
+    private void DrawLineBy2Position(Vector3 startPoint, Vector3 endPoint, bool isActive, LineRenderer lineRenderer, HandMode handMode)
+    {
+        if (isActive == false)
+        {
+            lineRenderer.enabled = false;
+            return;
+        }
+
+        GameObject tempCircle = null;
+        if (handMode.Equals(HandMode.right)) { tempCircle = focusCircle_right; }
+        else { tempCircle = focusCircle_left; }
+
+        lineRenderer.enabled = true;
+
+        lineRenderer.SetPosition(0, startPoint);
+        lineRenderer.SetPosition(1, endPoint);
+
+        tempCircle.transform.position = endPoint;
+    }
+
+
 }

@@ -110,6 +110,13 @@ public enum ServerNumber
     SERVER1 = 0, SERVER2, SERVER3, SERVER4
 }
 
+/// <summary>
+/// 装配指示物信息对象
+/// 用于专家用指示线段时在线段终点显示装配零件虚影
+/// 由VR端提交该数据，AR端使用该数据显示
+/// name: 装配零件名称，AR端根据name查找对应Object
+/// position: 装配零件指示物虚影的
+/// </summary>
 public struct DPCIndicator
 {
     public string name;
@@ -123,4 +130,23 @@ public static class GlobleInfo
     public static ServerNumber CurentServer = 0;
     public static bool isReceiveStateChanged = false;
 
+}
+
+
+/// <summary>
+/// 预选模式，0:关闭 1:选择起点 2: 选择终点
+/// </summary>
+public enum PreSelectMode { CLOSE=0, STARTSELECTED,ENDSELECTED }
+
+/// <summary>
+/// date:2022.7.28
+/// author: qinwen
+/// 专家画指示线时起点和终点的信息
+/// isRender:是否渲染
+/// </summary>
+public struct DPCPreSelect
+{
+    public Vector3 startPoint;
+    public Vector3 endPoint;
+    public PreSelectMode state;
 }
