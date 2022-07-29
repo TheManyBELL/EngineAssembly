@@ -187,6 +187,11 @@ public class LineRenderARA : MonoBehaviour
         {
             for (int i = 0; i < transform.childCount; i++)//遍历子物体是否还有子物体
             {
+                if(transform.GetChild(i).name== "Label")
+                {
+                    // AR端的辅助虚影会有Label子物体，标签不需要更改材质
+                    continue;
+                }
                 ChangeMaterial(transform.GetChild(i), material);//这里是只将最后一个无子物体的对象设置层级
             }
             if (transform.GetComponent<MeshRenderer>())
