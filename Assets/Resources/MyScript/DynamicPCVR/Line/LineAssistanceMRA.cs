@@ -29,6 +29,7 @@ public class LineAssistanceMRA : MonoBehaviour
         mirrorController = GetComponentInParent<MirrorControllerA>();
         assistSegmentObject = Instantiate(assistSegmentPrefab);
         assistLineRenderer = assistSegmentObject.GetComponent<LineRenderer>();
+        assistLineRenderer.enabled = false;
 
         drawPointList = new List<GameObject>();
 
