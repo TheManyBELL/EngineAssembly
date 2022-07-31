@@ -2286,6 +2286,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeftHandController
       objectReference: {fileID: 0}
+    - target: {fileID: 7100331475055756955, guid: 87c25aae70a48e54d9ffbfa954b6493f, type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.01
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87c25aae70a48e54d9ffbfa954b6493f, type: 3}
 --- !u!1 &7477121596590050410 stripped
@@ -2418,6 +2422,10 @@ PrefabInstance:
     - target: {fileID: 3285191688513143408, guid: 73ccef845019dfa4f874112bab051d44, type: 3}
       propertyPath: m_Name
       value: RightHandController
+      objectReference: {fileID: 0}
+    - target: {fileID: 8935897157519300852, guid: 73ccef845019dfa4f874112bab051d44, type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73ccef845019dfa4f874112bab051d44, type: 3}
