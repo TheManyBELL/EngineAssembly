@@ -14503,7 +14503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e1d20a5fece22b48bbd3d0784387479, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  segmentMaterial: {fileID: 2100000, guid: aed84d6e0166a2545a6cb12b72ad09eb, type: 2}
+  segmentMaterial: {fileID: 2100000, guid: ecd59912294ce9646841a4066abd5dae, type: 2}
   segmentThickness: 0.01
   RotateSymbol: {fileID: 7486974711368413920, guid: 3562510d2867c26459ad1c13afb77960, type: 3}
   PressSymbol: {fileID: 293570593768631736, guid: 84e7ebf45d5a41144bbf442e2ff5e2b5, type: 3}
@@ -14666,7 +14666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d36f3557336d4f34192a977efb0d5454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  straightLineMaterial: {fileID: 0}
+  straightLineMaterial: {fileID: 2100000, guid: ecd59912294ce9646841a4066abd5dae, type: 2}
   straightLineThickness: 0.01
   origin_line: 1
   virtualPartMaterial: {fileID: 2100000, guid: ad48fa2ec6258db40ba8779d61d5a0ab, type: 2}

@@ -50,6 +50,7 @@ public class LineAssistanceMRA : MonoBehaviour
 
         if(currentMode==PreSelectMode.CLOSE && segmentPreSelect.state == PreSelectMode.STARTSELECTED)
         {
+            Debug.Log("放置起点");
             // 放置点
             startPoint = segmentPreSelect.startPoint;
 
@@ -71,6 +72,7 @@ public class LineAssistanceMRA : MonoBehaviour
         }
         if(currentMode == PreSelectMode.STARTSELECTED && segmentPreSelect.state == PreSelectMode.ENDSELECTED)
         {
+            Debug.Log("放置终点");
             endPoint = segmentPreSelect.endPoint;
 
             GameObject drawPoint = Instantiate(drawPointPrefab);
