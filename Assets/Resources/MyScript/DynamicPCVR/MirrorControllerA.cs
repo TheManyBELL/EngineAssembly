@@ -18,9 +18,9 @@ public class MirrorControllerA : NetworkBehaviour
     public readonly SyncList<DPCSymbol> syncRotationList = new SyncList<DPCSymbol>();
     public readonly SyncList<DPCSymbol> syncPressList = new SyncList<DPCSymbol>();
 
-    // 需要同步的变量
+    // 辅助指示物信息
     [SyncVar]
-    public DPCIndicator auxiliaryIndicator = new DPCIndicator() { name = null,position = new Vector3() };
+    public DPCIndicator auxiliaryIndicator = new DPCIndicator() { startPartName = null,endPartName = null,endPosition = new Vector3(), state = IndicatorState.DEAD };
 
     // 线段指示点信息
     [SyncVar]

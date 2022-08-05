@@ -2152,7 +2152,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   VRCamera: {fileID: 0}
-  avatarY: -0.6
+  avatarY: -0.2
   controllerRight: {fileID: 0}
   controllerLeft: {fileID: 0}
   rightHandController: {fileID: 7630319391190188261}

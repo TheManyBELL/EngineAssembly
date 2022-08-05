@@ -11351,7 +11351,6 @@ MonoBehaviour:
   - {fileID: 8547567183219948167}
   - {fileID: 3372918285846322499}
   - {fileID: 6684401876895492809}
-  waikeList: []
 --- !u!1 &9121053328225423581
 GameObject:
   m_ObjectHideFlags: 0

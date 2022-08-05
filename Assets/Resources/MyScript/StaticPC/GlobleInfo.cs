@@ -64,6 +64,13 @@ public struct CreateSmartSignMessage : NetworkMessage
     public int smartSignNumber;
 }
 
+
+public struct CreateEnginePartMessage : NetworkMessage
+{
+    public int startNumber;
+    public int endNumber;
+}
+
 /// <summary>
 /// 相机模式，AR相机或者VR相机
 /// </summary>
@@ -81,8 +88,11 @@ public struct DPCArrow
     // 初始数据
     public Vector3 startPoint;// 线段起点
     public Vector3 endPoint; // 线段终点
+    public string startPartName; // 线段起点处物体名称
+    public string endPartName; // 线段终点处物体名称
     // 根据遮挡重计算
     public List<Vector3[]> curvePointList; // 实时曲线
+    
 };
 
 /// <summary>
@@ -110,6 +120,12 @@ public enum ServerNumber
     SERVER1 = 0, SERVER2, SERVER3, SERVER4
 }
 
+
+/// <summary>
+/// 辅助指示物，0:创建 1:正在生效 2: 死亡
+/// </summary>
+public enum IndicatorState { BORN = 0, ALIVE, DEAD }
+
 /// <summary>
 /// 装配指示物信息对象
 /// 用于专家用指示线段时在线段终点显示装配零件虚影
@@ -119,8 +135,11 @@ public enum ServerNumber
 /// </summary>
 public struct DPCIndicator
 {
-    public string name;
-    public Vector3 position;
+    public string startPartName;
+    public string endPartName;
+    public Vector3 endPosition;
+    public IndicatorState state;
+   
 }
 
 

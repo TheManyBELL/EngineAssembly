@@ -15,11 +15,6 @@ public class MainController : MonoBehaviour
     /// </summary>
     public List<GameObject> deviceList;
 
-    /// <summary>
-    /// 线束列表，手动在inspector面板赋值
-    /// 需要添加标签并对标签进行管理
-    /// </summary>
-    public List<GameObject> waikeList;
 
     // Start is called before the first frame update
     void Start()

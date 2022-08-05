@@ -84,7 +84,7 @@ public class HoloLabelController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (deviceList.Count == 0 && assemblyInfo.deviceList.Count!=0)
+        if (deviceList.Count == 0 && assemblyInfo.isPartsListInitialized==true)
         {
             deviceList = assemblyInfo.deviceList;
             Debug.Log("HoloLabelController 已经获取 deviceList"+ deviceList.Count);

@@ -12,8 +12,6 @@ public class AssemblyInfo : MonoBehaviour
     /// <summary>
     /// 主控制脚本，在无人机模型上
     /// </summary>
-    public GameObject engineAssemblyContent = null;
-    private MainController mainController = null;
 
     // 主控制脚本的 组件装配序列 列表
     public List<GameObject> componentAssemblySequence;
@@ -26,27 +24,32 @@ public class AssemblyInfo : MonoBehaviour
     // 主控制脚本的 需装配线束 列表
     public List<GameObject> waikeList;
 
+    private EngineAssemblyInfo engineAssemblyInfo;
+    public bool isPartsListInitialized = false;
+
+
     private void Awake()
     {
         deviceList = new List<GameObject>();
 
-        //componentAssemblySequence = mainController.componentAssemblySequence;
-        //deviceList = mainController.deviceList;
-        //waikeList = mainController.waikeList;
+        engineAssemblyInfo = GetComponentInParent<EngineAssemblyInfo>();
+
     }
 
     private void Update()
     {
-        // 查找
-        if(engineAssemblyContent == null)
+        if (!isPartsListInitialized)
         {
-            engineAssemblyContent = GameObject.FindGameObjectWithTag("EngineAssemblyContent");
-            if (engineAssemblyContent)
+            foreach (GameObject partPrefab in engineAssemblyInfo.EnginePartsList)
             {
-                Debug.Log("Assemblyinfo 已找到 engineAssemblyContent");
-                mainController = engineAssemblyContent.GetComponent<MainController>();
-                deviceList = mainController.deviceList;
+                GameObject realTimePart = GameObject.Find(partPrefab.name + "(Clone)");
+                if (realTimePart)
+                {
+                    deviceList.Add(realTimePart);
+                }
             }
+            isPartsListInitialized = true;
+            Debug.Log("一共找到了:" + deviceList.Count + "个零件");
         }
     }
 }

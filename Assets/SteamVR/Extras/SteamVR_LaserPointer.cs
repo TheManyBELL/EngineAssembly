@@ -87,6 +87,10 @@ namespace Valve.VR.Extras
             newMaterial.SetColor("_Color", color);
             pointer.GetComponent<MeshRenderer>().material = newMaterial;
 
+            // qinwenCode
+            // 初始把碰撞物设置为不激活
+            focusCircle.SetActive(false);
+
         }
 
         public virtual void OnPointerIn(PointerEventArgs e)
@@ -130,6 +134,7 @@ namespace Valve.VR.Extras
                 endPoint = hit.point;// 有问题
                 hitNormal = hit.normal; // 碰撞点法向量
 
+                focusCircle.SetActive(true);
                 Quaternion newRotation = Quaternion.LookRotation(hitNormal);
                 focusCircle.transform.rotation = newRotation;
                 Vector3 circlePoint = endPoint + hitNormal * circleDistanceRate; // 平移一段位置
@@ -141,6 +146,7 @@ namespace Valve.VR.Extras
                 isHit = false;
                 startPoint = new Vector3();
                 endPoint = new Vector3();
+                focusCircle.SetActive(false);
             }
 
             if (previousContact && previousContact != hit.transform)

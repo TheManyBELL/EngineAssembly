@@ -26,7 +26,7 @@ public class LineAssistanceMRA : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mirrorController = GetComponentInParent<MirrorControllerA>();
+        mirrorController = GetComponent<MirrorControllerA>();
         assistSegmentObject = Instantiate(assistSegmentPrefab);
         assistLineRenderer = assistSegmentObject.GetComponent<LineRenderer>();
         assistLineRenderer.enabled = false;

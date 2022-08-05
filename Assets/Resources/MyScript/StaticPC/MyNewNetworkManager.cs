@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Mirror;
@@ -17,6 +18,13 @@ public class MyNewNetworkManager : NetworkManager
     [Tooltip("从AR和VR两种模式中选择仅只选择一个")]
     public bool vrMode = false;
     public bool arMode = false;
+    [Header("Engine List")]
+    [Tooltip("需要同步的零件列表")]
+    public bool isSpawnEnginePart = false;
+    public int syncPartStart = 0;
+    public int syncPartEnd = 0;
+    public List<GameObject> RegistererEnginePartPrefab;
+
     [Header("Sync Environment")]
     [Tooltip("同步场景的开始序号和结束序号")]
     public int syncEnv_start=0;
@@ -209,37 +217,50 @@ public class MyNewNetworkManager : NetworkManager
     {
         base.OnClientConnect();
 
+        // VR和AR都需要生成玩家角色
         CreateMMOCharacterMessage characterMessage = new CreateMMOCharacterMessage
         {
             mode = GlobleInfo.ClientMode
         };
-
         NetworkClient.Send(characterMessage);
 
+        // VR端作为所有者发起的物体生成请求
         if (GlobleInfo.ClientMode.Equals(CameraMode.VR))
         {
             if (syncEnv_end >= syncEnv_start)
             {
+                // 生成 SmartSign
+                CreateSmartSignMessage smartSignMessage = new CreateSmartSignMessage
+                {
+                    smartSignNumber = 2
+                };
+                NetworkClient.Send(smartSignMessage);
+
+                // 生成场景物体
                 CreateEnvironmentMessage syncObjMessage = new CreateEnvironmentMessage
                 {
                     startNumber = syncEnv_start,
                     endNumber = syncEnv_end
                 };
                 NetworkClient.Send(syncObjMessage);
+
+                // 生成引擎零件物体
+                if (isSpawnEnginePart)
+                {
+                    CreateEnginePartMessage enginePartsMessage = new CreateEnginePartMessage
+                    {
+                        startNumber = syncPartStart,
+                        endNumber = syncPartEnd
+                    };
+
+                    NetworkClient.Send(enginePartsMessage);
+                    Debug.Log("VR端已发出生成零件请求");
+                }
             }
             
         }
 
-        if (GlobleInfo.ClientMode.Equals(CameraMode.VR))
-        {
-            CreateSmartSignMessage smartSignMessage = new CreateSmartSignMessage
-            {
-                smartSignNumber = 2
-            };
-            NetworkClient.Send(smartSignMessage);
-        }
-
-
+        // AR端作为所有者发起的物体生成请求
         if (GlobleInfo.ClientMode.Equals(CameraMode.AR))
         {
             CreateEnvironmentMessage syncDepthCameraMessage = new CreateEnvironmentMessage
@@ -295,6 +316,7 @@ public class MyNewNetworkManager : NetworkManager
         NetworkServer.RegisterHandler<CreateMMOCharacterMessage>(OnCreateCharacter);
         NetworkServer.RegisterHandler<CreateEnvironmentMessage>(OnSyncObject);
         NetworkServer.RegisterHandler<CreateSmartSignMessage>(OnSmartSign);
+        NetworkServer.RegisterHandler<CreateEnginePartMessage>(OnEnginePart);
     }
 
     /// <summary>
@@ -349,6 +371,14 @@ public class MyNewNetworkManager : NetworkManager
     private void OnSmartSign(NetworkConnection conn,CreateSmartSignMessage message)
     {
         NetworkServer.Spawn(Instantiate(spawnPrefabs[message.smartSignNumber]), conn);
+    }
+
+    private void OnEnginePart(NetworkConnection conn,CreateEnginePartMessage message)
+    {
+        for (int i = message.startNumber; i <= message.endNumber; i++)
+        {
+            NetworkServer.Spawn(Instantiate(RegistererEnginePartPrefab[i]), conn);
+        }
     }
 
     #endregion

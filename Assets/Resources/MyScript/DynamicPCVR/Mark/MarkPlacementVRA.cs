@@ -36,11 +36,9 @@ public class MarkPlacementVRA : MonoBehaviour
     public List<GameObject> drawpointList;
 
     // 零件虚影指示相关变量
-    private List<GameObject> enginePartsList;
-    private GameObject vrSelectedPart = null;
-    private GameObject virtualPart = null;
-    private float virtualPart_offset_y = 0.1f;
-    public Material virtualPartMaterial; // from inspector
+    private GameObject startPointPart = null; // 起点处零件名称
+    private GameObject endPointPart = null; // 终点处零件名称
+    private IndicatorControllerMRA indicatorController;
 
     private enum SymbolPRState
     {
@@ -77,6 +75,8 @@ public class MarkPlacementVRA : MonoBehaviour
         pressSymbol.SetActive(false);
 
         drawpointList = new List<GameObject>();
+
+        indicatorController = GetComponentInParent<IndicatorControllerMRA>(); // 获取本物体下的组件
     }
 
     // Update is called once per frame
@@ -109,6 +109,7 @@ public class MarkPlacementVRA : MonoBehaviour
         {
             AddRotation();
         }
+
     }
 
     /// <summary>
@@ -141,50 +142,39 @@ public class MarkPlacementVRA : MonoBehaviour
         // 如果此时是第一个点
         if(currentPointNumber == 0)
         {
-            // 流程1：再次发射射线检测碰撞物体，碰撞到物体后更新vrSelectedPart
-            Ray raycast = new Ray(rightHand.transform.position, rightHand.transform.forward);
-            RaycastHit hit;
-            bool bHit = Physics.Raycast(raycast, out hit, LayerMask.NameToLayer("DepthCameraOnly")); //  
-            if (!bHit)
-            {
-                Debug.Log("VR端没有选中零件");
-            }
-            else
-            {
-                vrSelectedPart = hit.collider.gameObject; // 本段代码核心
-                Debug.Log("选中的零件是: "+hit.collider.gameObject.name);
-            }
+            // 流程1：尝试获取当前射线路径上的零件。若无零件则startPointPart == null
+            GetPartByHandleRay(rightHand, ref startPointPart);
 
-            // 流程2：向服务器提交初次选点信息
+            // 流程2：向服务器提交初次预选点信息
             myController.CmdUpdateSegmentPreSelect(new DPCPreSelect()
             {
                 startPoint = newPoint,
                 endPoint = new Vector3(),
                 state = PreSelectMode.STARTSELECTED
             });
+
+            // 流程3：将当前点（点云碰撞点）加入列表
+            currentPointList.Add(newPoint);
         }
 
         // 如果此时是第二个点,更新终点坐标
         if (currentPointNumber == 1)
         {
+            // 流程1：尝试获取当前射线路径上的零件
+            GetPartByHandleRay(rightHand, ref endPointPart);
+
+            // 流程2：向服务器提交二次预选点信息（终点）
             myController.CmdUpdateSegmentPreSelect(new DPCPreSelect()
             {
                 startPoint = currentPointList[0],
                 endPoint = newPoint,
                 state = PreSelectMode.ENDSELECTED
             });
-        }
 
-        if (currentPointNumber < 2)
-        {
-            //GameObject pointobj = Instantiate(drawpointprefab);
-            //pointobj.transform.position = newPoint;
-            //pointobj.layer = LayerMask.NameToLayer("DepthCameraUnivisible");
-            //drawpointList.Add(pointobj);
-            //Debug.Log("current point number is:" + currentPointNumber + ", add new point");
+            // 流程3：将当前点（点云碰撞点）加入列表
             currentPointList.Add(newPoint);
-
         }
+
         if (currentPointNumber == 2)
         {
             Debug.Log("current point number is:" + currentPointNumber + ", update segment");
@@ -193,22 +183,22 @@ public class MarkPlacementVRA : MonoBehaviour
                 index = myController.syncArrowList.Count,
                 startPoint = currentPointList[0],
                 endPoint = currentPointList[1],
+                startPartName = startPointPart == null ? null : startPointPart.name.Substring(0, startPointPart.name.Length - 7),
+                endPartName = endPointPart == null ? null : endPointPart.name.Substring(0, endPointPart.name.Length - 7),
                 curvePointList = new List<Vector3[]>(),
             });
 
             // 2022.7.21 已选中两个点并确认，在终点位置生成虚影
-            if (vrSelectedPart)
+            // 只有一开始选到了零件才会提交零件虚影信息
+            if (startPointPart)
             {
-                virtualPart = Instantiate(vrSelectedPart);
-                virtualPart.transform.position = new Vector3(currentPointList[1].x, currentPointList[1].y+virtualPart_offset_y, currentPointList[1].z);
-                virtualPart.GetComponent<BoxCollider>().enabled = false;
-                ChangeLayer(virtualPart.transform, LayerMask.NameToLayer("DepthCameraUnivisible"));
-                ChangeMaterial(virtualPart.transform, virtualPartMaterial);
-                myController.CmdUpdateDPCIndicator(new DPCIndicator()
+                indicatorController.UpdateIndicator(new DPCIndicator()
                 {
-                    name = vrSelectedPart.name,
-                    position = virtualPart.transform.position
-                });
+                    startPartName = startPointPart == null ? null : startPointPart.name.Substring(0, startPointPart.name.Length - 7),
+                    endPartName = endPointPart == null ? null : endPointPart.name.Substring(0, endPointPart.name.Length - 7),
+                    endPosition = currentPointList[1],
+                    state = IndicatorState.BORN
+                });;
             }
 
             // 2022.7.28 已选中两个点并确认，关闭辅助选点
@@ -221,11 +211,7 @@ public class MarkPlacementVRA : MonoBehaviour
 
             // 清空临时变量
             currentPointList.Clear();
-            //for (int i = 0; i < drawpointList.Count; i++)
-            //{
-            //    Destroy(drawpointList[i]);
-            //}
-            //drawpointList.Clear();
+
         }
     }
 
@@ -245,9 +231,11 @@ public class MarkPlacementVRA : MonoBehaviour
     {
         myController.CmdDeleteAllArrow();
         Debug.Log("VR客户端发起删除所有线段的请求");
-        vrSelectedPart = null;
-        Destroy(virtualPart);
-        Debug.Log("VR客户端删除了当前指示物");
+        indicatorController.UpdateIndicator(new DPCIndicator()
+        {
+            state = IndicatorState.DEAD
+        });
+        Debug.Log("VR客户端发起删除指示物的请求");
     }
 
     private Vector3 GetCollisionPoint()
@@ -420,6 +408,28 @@ public class MarkPlacementVRA : MonoBehaviour
             transform.GetComponent<MeshRenderer>().material = material;
         }
     }
+
+
+    private void GetPartByHandleRay(GameObject vrHandle, ref GameObject currentPart)
+    {
+        // 流程1：再次发射射线检测碰撞物体，碰撞到物体后更新startPointPart
+        Ray raycast = new Ray(vrHandle.transform.position, vrHandle.transform.forward);
+        RaycastHit hit;
+        bool bHit = Physics.Raycast(raycast, out hit, LayerMask.NameToLayer("DepthCameraOnly"));
+        if (!bHit)
+        {
+            currentPart = null;
+            Debug.Log("VR端没有选中零件");
+        }
+        else
+        {
+            Debug.Log("选中的零件是: " + hit.collider.gameObject.name.Substring(0, hit.collider.gameObject.name.Length-7));
+            currentPart = hit.collider.gameObject; // 本段代码核心
+
+        }
+    }
+
+
 
 
 }

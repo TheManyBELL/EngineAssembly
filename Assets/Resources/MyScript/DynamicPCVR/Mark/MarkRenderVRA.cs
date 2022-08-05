@@ -9,6 +9,7 @@ public class MarkRenderVRA : MonoBehaviour
     private List<GameObject> segmentObjectList;
     private List<GameObject> rotationObjectList;
     private List<GameObject> pressObjectList;
+    
 
     public Material segmentMaterial;
     public float segmentThickness = 0.01f;
@@ -32,6 +33,9 @@ public class MarkRenderVRA : MonoBehaviour
         RenderArrow();
         RenderRotation();
         RenderPress();
+
+        // 动态更新
+        UpdateSegment();
     }
 
     /// <summary>
@@ -60,15 +64,60 @@ public class MarkRenderVRA : MonoBehaviour
         {
             DPCArrow arrow = mirrorController.syncArrowList[n_curArrow + i];
             Debug.Log("point1:" + arrow.startPoint.ToString() + ",point2:" + arrow.endPoint.ToString());
+
+
             SegmentInfo segment = new SegmentInfo()
             {
                 startPoint = arrow.startPoint,
                 endPoint = arrow.endPoint
             };
+
             DrawSegment(segment);
             DrawArrow(segment);
         }
+
+
+
     }
+
+    private void UpdateSegment()
+    {
+        int n_serverArrow = mirrorController.syncArrowList.Count; // number of latest segment list
+        for(int i = 0; i < n_serverArrow; i++)
+        {
+            DPCArrow curArrow = mirrorController.syncArrowList[i];
+
+            GameObject curSegment = segmentObjectList[i * 3 + 0];
+            LineRenderer curLineRenderer = curSegment.GetComponent<LineRenderer>();
+            curLineRenderer.SetPosition(0, curArrow.startPoint);
+            curLineRenderer.SetPosition(1, curArrow.endPoint);
+
+            // 更新箭头
+            Vector3 screenP1 = Camera.main.WorldToScreenPoint(curArrow.startPoint),
+            screenP2 = Camera.main.WorldToScreenPoint(curArrow.endPoint);
+            Vector2 dir = (screenP1 - screenP2).normalized;
+            Vector2 verticalDir = new Vector2(-dir.y, dir.x);
+
+            int length = 20;
+            Vector3 screenArrowP1 = screenP2 + length * new Vector3(verticalDir.x, verticalDir.y) + length * new Vector3(dir.x, dir.y),
+                screenArrowP2 = screenP2 - length * new Vector3(verticalDir.x, verticalDir.y) + length * new Vector3(dir.x, dir.y);
+
+            Vector3 arrowP1 = Camera.main.ScreenToWorldPoint(screenArrowP1),
+                arrowP2 = Camera.main.ScreenToWorldPoint(screenArrowP2);
+
+            GameObject curSegmentArrow1 = segmentObjectList[i * 3 + 1];
+            GameObject curSegmentArrow2 = segmentObjectList[i * 3 + 2];
+
+
+            curSegmentArrow1.GetComponent<LineRenderer>().SetPosition(0, arrowP1);
+            curSegmentArrow1.GetComponent<LineRenderer>().SetPosition(1, curArrow.endPoint);
+
+            curSegmentArrow2.GetComponent<LineRenderer>().SetPosition(0, arrowP2);
+            curSegmentArrow2.GetComponent<LineRenderer>().SetPosition(1, curArrow.endPoint);
+
+        }
+    }
+
 
     private void RenderRotation()
     {
@@ -171,5 +220,12 @@ public class MarkRenderVRA : MonoBehaviour
             startPoint = arrowP2,
             endPoint = segmentInfo.endPoint
         });
+    }
+
+    private Vector3 GetBetweenPoint(Vector3 start, Vector3 end, float percent = 0.5f)
+    {
+        Vector3 normal = (end - start).normalized;
+        float distance = Vector3.Distance(start, end);
+        return normal * (distance * percent) + start;
     }
 }

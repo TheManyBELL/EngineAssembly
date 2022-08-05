@@ -14,14 +14,6 @@ public class LineRenderARA : MonoBehaviour
     public bool origin_line = true;
 
 
-    // 零件虚影指示相关变量
-    private List<GameObject> enginePartsList;
-    private DPCIndicator indicator;
-    private GameObject virtualPart = null;
-    public Material virtualPartMaterial; // from inspector
-
-    public GameObject engineAssemblyContent = null;
-    private MainController mainController = null;
 
     // Start is called before the first frame update
     void Start()
@@ -29,26 +21,11 @@ public class LineRenderARA : MonoBehaviour
         mirrorController = GetComponentInParent<MirrorControllerA>();
         lines = new List<GameObject>();
 
-        // 从SmartSignA获得零件列表
-        // enginePartsList = GetComponentInParent<EngineAssemblyInfo>().EnginePartsList;
-
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        // 查找
-        if (engineAssemblyContent == null)
-        {
-            engineAssemblyContent = GameObject.FindGameObjectWithTag("EngineAssemblyContent");
-            if (engineAssemblyContent)
-            {
-                Debug.Log("lineRenderARA 已找到 engineAssemblyContent");
-                mainController = engineAssemblyContent.GetComponent<MainController>();
-                enginePartsList = mainController.deviceList;
-            }
-        }
 
 
         line_index = 0;
@@ -59,36 +36,6 @@ public class LineRenderARA : MonoBehaviour
             DrawLine(ref current_line);
         }
         ClearLine();
-
-        // qinwen
-        if(mirrorController.syncArrowList.Count == 1 && virtualPart==null)
-        {
-            indicator = mirrorController.auxiliaryIndicator;
-            if (indicator.name != null)
-            {
-                foreach (GameObject partsObj in enginePartsList)
-                {
-                    if (indicator.name == partsObj.name)
-                    {
-                        virtualPart = Instantiate(partsObj);
-                        virtualPart.transform.position = indicator.position;
-                        virtualPart.GetComponent<BoxCollider>().enabled = false;
-
-                        ChangeLayer(virtualPart.transform, LayerMask.NameToLayer("DepthCameraUnivisible"));
-                        ChangeMaterial(virtualPart.transform, virtualPartMaterial);
-
-                        virtualPart.transform.Find("Label").gameObject.SetActive(false);// 指示物不显示标签
-                        
-                        Debug.Log("AR客户端新增当前指示物");
-                    }
-                }
-            }
-        }
-        if(mirrorController.syncArrowList.Count == 0 && virtualPart != null)
-        {
-            Destroy(virtualPart);
-            Debug.Log("AR客户端删除了当前指示物");
-        }
         
 
     }
@@ -156,52 +103,4 @@ public class LineRenderARA : MonoBehaviour
         return lineObj;
     }
 
-    /// 同时修改物体及其所有子物体层级
-    /// </summary>
-    /// <param name="transform"></param>
-    /// <param name="layer"></param>
-    private void ChangeLayer(Transform transform, int layer)
-    {
-        if (transform.childCount > 0)//如果子物体存在
-        {
-            for (int i = 0; i < transform.childCount; i++)//遍历子物体是否还有子物体
-            {
-                ChangeLayer(transform.GetChild(i), layer);//这里是只将最后一个无子物体的对象设置层级
-            }
-            transform.gameObject.layer = layer;//将存在的子物体遍历结束后需要把当前子物体节点进行层级设置
-        }
-        else					//无子物体
-        {
-            transform.gameObject.layer = layer;
-        }
-    }
-
-    /// <summary>
-    /// 同时修改物体及其所有子物体材质
-    /// </summary>
-    /// <param name="transform"></param>
-    /// <param name="layer"></param>
-    private void ChangeMaterial(Transform transform, Material material)
-    {
-        if (transform.childCount > 0)//如果子物体存在
-        {
-            for (int i = 0; i < transform.childCount; i++)//遍历子物体是否还有子物体
-            {
-                if(transform.GetChild(i).name== "Label")
-                {
-                    // AR端的辅助虚影会有Label子物体，标签不需要更改材质
-                    continue;
-                }
-                ChangeMaterial(transform.GetChild(i), material);//这里是只将最后一个无子物体的对象设置层级
-            }
-            if (transform.GetComponent<MeshRenderer>())
-            {
-                transform.GetComponent<MeshRenderer>().material = material;//将存在的子物体遍历结束后需要把当前子物体节点进行层级设置
-            }
-        }
-        else					//无子物体
-        {
-            transform.GetComponent<MeshRenderer>().material = material;
-        }
-    }
 }
