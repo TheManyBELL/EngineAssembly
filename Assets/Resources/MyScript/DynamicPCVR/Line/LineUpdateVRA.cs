@@ -63,17 +63,49 @@ public class LineUpdateVRA : MonoBehaviour
             }
             if(segmentEndPart != null)
             {
-                //Debug.Log("终点物体:"+segmentEndPart.name);
-                //// 在这里进行一次射线碰撞，从终点物体中心沿着两点连线方向发射
-                //Vector3 rayDicretion =  segmentStartPart.transform.position - segmentEndPart.transform.position;
-                //Ray raycast = new Ray(segmentEndPart.transform.position, rayDicretion);
-                //RaycastHit hit;
-                //Physics.Raycast(raycast, out hit, LayerMask.NameToLayer("DepthCameraOnly"));
-                //Debug.Log("实时射线：" + hit.collider.name);
-                //arrow.endPoint = hit.point;
-                arrow.endPoint = segmentEndPart.transform.position;
+                arrow.endPoint = intersectBox(arrow.startPoint, segmentEndPart);
+                //arrow.endPoint = segmentEndPart.transform.position;
             }
             mirrorController.CmdUpdateDPCArrow(arrow);
         }
+    }
+
+    private Vector3 intersectBox(Vector3 p1, GameObject t)
+    {
+        Vector3 p2 = t.transform.position;
+        Bounds tAABB = new Bounds();
+        Renderer[] renderers = t.GetComponentsInChildren<Renderer>();
+        for (int i = 0; i < renderers.Length; i++)
+        {
+            tAABB.Encapsulate(renderers[i].bounds);
+        }
+
+        float x = tAABB.extents.x, y = tAABB.extents.y, z = tAABB.extents.z;
+        float scale = 1.0f;
+        Vector3[] vAABB = new Vector3[]{
+            tAABB.center + scale * new Vector3( x,  y,  z),
+            tAABB.center + scale * new Vector3( x,  y, -z),
+            tAABB.center + scale * new Vector3( x, -y,  z),
+            tAABB.center + scale * new Vector3( x, -y, -z),
+            tAABB.center + scale * new Vector3(-x,  y,  z),
+            tAABB.center + scale * new Vector3(-x,  y, -z),
+            tAABB.center + scale * new Vector3(-x, -y,  z),
+            tAABB.center + scale * new Vector3(-x, -y, -z)
+        };
+
+        // sphere
+        float dis = Vector3.Distance(p1, p2);
+        Vector3 dir = (p2 - p1).normalized;
+        float r = Mathf.Sqrt(x * x + y * y + z * z) * 0.8f;
+        Vector3 intersect_sphere = p1 + (dis - r) * dir;
+
+        // cube
+        float x_min = Mathf.Min((vAABB[0].x - p1.x) / dir.x, (vAABB[7].x - p1.x) / dir.x);
+        float y_min = Mathf.Min((vAABB[0].y - p1.y) / dir.y, (vAABB[7].y - p1.y) / dir.y);
+        float z_min = Mathf.Min((vAABB[0].z - p1.z) / dir.z, (vAABB[7].z - p1.z) / dir.z);
+        float t_max = Mathf.Max(Mathf.Max(x_min, y_min), z_min);
+        Vector3 intersect_cube = p1 + t_max * dir;
+
+        return intersect_cube;
     }
 }

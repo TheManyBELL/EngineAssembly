@@ -415,7 +415,7 @@ public class MarkPlacementVRA : MonoBehaviour
         // 流程1：再次发射射线检测碰撞物体，碰撞到物体后更新startPointPart
         Ray raycast = new Ray(vrHandle.transform.position, vrHandle.transform.forward);
         RaycastHit hit;
-        bool bHit = Physics.Raycast(raycast, out hit, LayerMask.NameToLayer("DepthCameraOnly"));
+        bool bHit = Physics.Raycast(raycast, out hit,Mathf.Infinity, (1<<15));
         if (!bHit)
         {
             currentPart = null;
