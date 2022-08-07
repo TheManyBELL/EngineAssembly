@@ -44185,7 +44185,7 @@ MonoBehaviour:
   kinect_front: {x: 0, y: -1, z: 0}
   kinect_up: {x: -1, y: 0, z: 0}
   kinect_right: {x: 0, y: 0, z: -1}
-  IP: 192.168.38.10
+  IP: 219.224.167.165
   port: 10002
 --- !u!1 &8046820750367391436
 GameObject:
