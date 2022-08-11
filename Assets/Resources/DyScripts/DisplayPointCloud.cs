@@ -384,7 +384,7 @@ public class DisplayPointCloud : MonoBehaviour
 
     public void newFrame()
     {
-        Debug.Log("111");
+        //Debug.Log("111");
         if (!isRenderFrame) { return; }
         byte[] copy = new byte[Depth_compressed + Color_compressed + 21];
         Buffer.BlockCopy(Frame, 0, copy, 0, Depth_compressed + Color_compressed + 21);

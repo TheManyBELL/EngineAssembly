@@ -10,6 +10,9 @@ public class LineUpdateVRA : MonoBehaviour
     private List<GameObject> segmentEndPartList; // 线段终点绑定的零件
     private List<GameObject> segmentStartPartList; // 线段起点绑定的零件
 
+    public bool isEnableRealTimeUpdate = false;
+    public bool isEnableIntersectBox = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +25,12 @@ public class LineUpdateVRA : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdatePartList();
-        UpdateArrowStartAndEnd();
+        if (isEnableRealTimeUpdate)
+        {
+            UpdatePartList();
+            UpdateArrowStartAndEnd();
+        }
+       
     }
 
 
@@ -63,8 +70,14 @@ public class LineUpdateVRA : MonoBehaviour
             }
             if(segmentEndPart != null)
             {
-                arrow.endPoint = intersectBox(arrow.startPoint, segmentEndPart);
-                //arrow.endPoint = segmentEndPart.transform.position;
+                if (isEnableIntersectBox)
+                {
+                    arrow.endPoint = intersectBox(arrow.startPoint, segmentEndPart);
+                }
+                else
+                {
+                    arrow.endPoint = segmentEndPart.transform.position;
+                }
             }
             mirrorController.CmdUpdateDPCArrow(arrow);
         }

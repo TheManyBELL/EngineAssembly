@@ -11,9 +11,9 @@ using System;
 public class TrackingServer : MonoBehaviour
 {
 
-    public Vector3 kinect_front;    // kinect正前方
-    public Vector3 kinect_up;       // kinect下方
-    public Vector3 kinect_right;    // kinect右方
+    public GameObject kinect_front;    // kinect正前方
+    public GameObject kinect_up;       // kinect下方
+    public GameObject kinect_right;    // kinect右方
 
     public string IP;
     public int port;
@@ -136,7 +136,11 @@ public class TrackingServer : MonoBehaviour
 
         // mat
         Vector4 homogeneous = new Vector4(0, 0, 0, 1);
-        Matrix4x4 kinect_coordinate = new Matrix4x4(kinect_right, kinect_up, kinect_front, homogeneous);
+        Vector3 right = (kinect_right.transform.position - transform.position).normalized,
+            up = (kinect_up.transform.position - transform.position).normalized,
+            front = (kinect_front.transform.position - transform.position).normalized;
+
+        Matrix4x4 kinect_coordinate = new Matrix4x4(right, up, front, homogeneous);
         Matrix4x4 transform_mat = new Matrix4x4(
             new Vector4(m_val[0 * 4 + 0], m_val[1 * 4 + 0], m_val[2 * 4 + 0], 0),
             new Vector4(m_val[0 * 4 + 1], m_val[1 * 4 + 1], m_val[2 * 4 + 1], 0),

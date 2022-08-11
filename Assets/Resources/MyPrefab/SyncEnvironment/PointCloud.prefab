@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hostIP_ar: 192.168.38.2
-  hostIP_vr: 219.224.167.165
+  hostIP_vr: 192.168.38.10
   hostIP: 
 --- !u!1001 &8573055439531478071
 PrefabInstance:

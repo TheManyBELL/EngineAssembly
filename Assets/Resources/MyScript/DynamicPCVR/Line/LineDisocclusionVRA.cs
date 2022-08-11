@@ -27,6 +27,9 @@ public class LineDisocclusionVRA : MonoBehaviour
 
     private GlobalUtils globalUtils;
 
+    // 是否允许实时去遮挡计算，用于性能测试 
+    public bool isEnableRealTimeDeocclusion = false;
+
     private void Start()
     {
         mirrorController = GetComponentInParent<MirrorControllerA>();
@@ -40,7 +43,7 @@ public class LineDisocclusionVRA : MonoBehaviour
 
     private void Update()
     {
-        // filter
+        // 增删要去遮挡的箭头指示线
         while (pastLineVisibility.Count > mirrorController.syncArrowList.Count)
         {
             pastLineVisibility.RemoveAt(pastLineVisibility.Count - 1);
@@ -60,21 +63,26 @@ public class LineDisocclusionVRA : MonoBehaviour
             pastLineVisibility.Add(tmp);
         }
 
-        for (int i = 0; i < mirrorController.syncArrowList.Count;++i)
+        if (isEnableRealTimeDeocclusion)
         {
-            current_line = mirrorController.syncArrowList[i];
-            // current_line.curvePointList.Clear();
+            // 对当前的所有箭头指示线进行增删操作
+            for (int i = 0; i < mirrorController.syncArrowList.Count; ++i)
+            {
+                current_line = mirrorController.syncArrowList[i];
+                // current_line.curvePointList.Clear();
 
-            p1 = current_line.startPoint;
-            p2 = current_line.endPoint;
-            curve_list.Clear();
-            arrowDisocclusion();
+                p1 = current_line.startPoint;
+                p2 = current_line.endPoint;
+                curve_list.Clear();
+                arrowDisocclusion();
 
-            current_line.curvePointList.Clear();
-            current_line.curvePointList.AddRange(curve_list);
-            mirrorController.CmdUpdateDPCArrow(current_line);
+                current_line.curvePointList.Clear();
+                current_line.curvePointList.AddRange(curve_list);
+                mirrorController.CmdUpdateDPCArrow(current_line);
 
+            }
         }
+
     }
 
     private void arrowDisocclusion()

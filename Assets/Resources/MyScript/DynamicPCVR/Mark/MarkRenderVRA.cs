@@ -17,6 +17,9 @@ public class MarkRenderVRA : MonoBehaviour
     public GameObject RotateSymbol;
     public GameObject PressSymbol;
 
+    // 是否允许对标识进行实时更新
+    public bool isEnableRealTimeUpdate = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +38,11 @@ public class MarkRenderVRA : MonoBehaviour
         RenderPress();
 
         // 动态更新
-        UpdateSegment();
+        if (isEnableRealTimeUpdate)
+        {
+            UpdateSegment();
+        }
+        
     }
 
     /// <summary>
@@ -87,12 +94,12 @@ public class MarkRenderVRA : MonoBehaviour
         {
             DPCArrow curArrow = mirrorController.syncArrowList[i];
 
-            GameObject curSegment = segmentObjectList[i * 3 + 0];
+            // 根据server上最新的箭头指示线信息curArrow更新本地
+            GameObject curSegment = segmentObjectList[i * 3 + 0]; // 组成箭头指示线的三条线段中的主干线段
             LineRenderer curLineRenderer = curSegment.GetComponent<LineRenderer>();
             curLineRenderer.SetPosition(0, curArrow.startPoint);
             curLineRenderer.SetPosition(1, curArrow.endPoint);
 
-            // 更新箭头
             Vector3 screenP1 = Camera.main.WorldToScreenPoint(curArrow.startPoint),
             screenP2 = Camera.main.WorldToScreenPoint(curArrow.endPoint);
             Vector2 dir = (screenP1 - screenP2).normalized;
