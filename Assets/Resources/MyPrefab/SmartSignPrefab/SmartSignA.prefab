@@ -3374,7 +3374,7 @@ GameObject:
   - component: {fileID: 5374126525523468512}
   - component: {fileID: 4346990544077607080}
   - component: {fileID: 4187637292110192109}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: x
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6788,7 +6788,7 @@ GameObject:
   - component: {fileID: 6211506418901612345}
   - component: {fileID: 668775459353907287}
   - component: {fileID: 7102330062745641307}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: y
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14438,7 +14438,7 @@ GameObject:
   - component: {fileID: 7209223951789211599}
   - component: {fileID: 3144655286611242624}
   - component: {fileID: 8501025481515376789}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: kinect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15038,26 +15038,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnginePartsList:
-  - {fileID: 485724536739415498, guid: 4196f80379a5603479da6e13775eb81a, type: 3}
-  - {fileID: 8640442174235571731, guid: b88f194312cd8df438de1c01f6537a23, type: 3}
-  - {fileID: 4770590429167803562, guid: 4a4723ae2f0299842918f4f157873972, type: 3}
-  - {fileID: 5272166366568902670, guid: bc8dfcadd1017a84d93fc5ecec3d1e55, type: 3}
-  - {fileID: 1052563650791207784, guid: 4cd6252f7a436bc418fc03104bd62d6a, type: 3}
-  - {fileID: 8332765502536937004, guid: c50b1b1cc384029438c9199aee3a1945, type: 3}
-  - {fileID: 3941979476212123836, guid: 3e16b75da86d6704ea04175fbe3b2688, type: 3}
-  - {fileID: 7520814651601915474, guid: 8e32ce99356d25e4f8c4356495b5a467, type: 3}
-  - {fileID: 6900979949177305076, guid: 17d7545e7b65860408cf89fd58c1309a, type: 3}
-  - {fileID: 1553541736015037907, guid: 179d9d93e49305545bb314776526e19e, type: 3}
-  - {fileID: 3613680345943344678, guid: 2f2685f6612667949979131a5c45e595, type: 3}
-  - {fileID: 3592416795411547947, guid: 4e3160491b03b9045a95465d1c398ca3, type: 3}
-  - {fileID: 7148040552125852139, guid: 9ebf39dbbef27374886bc157e8415755, type: 3}
-  - {fileID: 4369574408033660014, guid: 860d09f67dc01554b9973717d339467b, type: 3}
-  - {fileID: 8938646676662544113, guid: 7e5d577b0108056489bd1a660ec00258, type: 3}
-  - {fileID: 3852414718940346643, guid: 732ea1931d4616443b9c90eb8eb25e79, type: 3}
-  - {fileID: 5790945050537633837, guid: 863b1a521fe6ed649926daa17ca449cc, type: 3}
-  - {fileID: 532210955617537645, guid: f2b9114be74327b40ade4837952c1d32, type: 3}
-  - {fileID: 7101298376822958274, guid: e3fe1bd514a49e249aec4315c2e6ab97, type: 3}
-  - {fileID: 9070121990673606916, guid: 850257d5f69868b40acd2753a5952c8d, type: 3}
+  - {fileID: 6330497958546059700, guid: ca235b3eb12c1214aa214c614bc73eb2, type: 3}
+  - {fileID: 8858882255320328131, guid: deb25aeec62c37c479699cf75a9c328c, type: 3}
+  - {fileID: 3865487833443306060, guid: eecfba40a45077b4399b5eea8ebd663b, type: 3}
+  - {fileID: 5643337280020806093, guid: 27a909e0a52780c44abed828c9c92118, type: 3}
+  - {fileID: 4755523397190793938, guid: 656e3cff7d8a901469c7524ade2da054, type: 3}
+  - {fileID: 9156062966088802777, guid: 5e89b2470afb36640b8b3cdc961c16a5, type: 3}
 --- !u!114 &5237663771311860129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15703,7 +15689,7 @@ GameObject:
   - component: {fileID: 1567593074207543023}
   - component: {fileID: 2487668363495001782}
   - component: {fileID: 6442784612156183564}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: z
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44533,13 +44519,13 @@ GameObject:
   m_Component:
   - component: {fileID: 2551344500703705435}
   - component: {fileID: 7527605688167259398}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TrackingCameraVR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2551344500703705435
 Transform:
   m_ObjectHideFlags: 0
@@ -44573,7 +44559,7 @@ MonoBehaviour:
   kinect_front: {fileID: 4991345739103234326}
   kinect_up: {fileID: 2274867364953685708}
   kinect_right: {fileID: 1283426679201497907}
-  IP: 192.168.38.10
+  IP: 219.224.167.165
   port: 10002
 --- !u!1 &8046820750367391436
 GameObject:

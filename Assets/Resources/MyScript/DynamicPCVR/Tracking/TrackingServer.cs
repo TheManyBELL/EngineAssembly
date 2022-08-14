@@ -58,8 +58,13 @@ public class TrackingServer : MonoBehaviour
         partsDictionary = new Dictionary<string, string>();
 
         partsDictionary.Add("Bearing", "轴承(大)");
-        partsDictionary.Add("EnginePart", "风机外壳支架");
+        partsDictionary.Add("BearingSmall", "轴承(小)");
         partsDictionary.Add("Fan", "风扇");
+        partsDictionary.Add("FanCasting", "风机外壳");
+        partsDictionary.Add("FanSupport", "风机外壳支架");
+        partsDictionary.Add("HPC", "高压涡轮主体");
+
+        partsDictionary.Add("EnginePart", "风机外壳支架");
         partsDictionary.Add("LPTCasing", "低压涡轮外壳");
         partsDictionary.Add("NozzleBody", "管嘴顶部");
         partsDictionary.Add("NozzleVoids", "管嘴底部");

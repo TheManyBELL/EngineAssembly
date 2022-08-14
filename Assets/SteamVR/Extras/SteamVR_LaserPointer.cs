@@ -40,7 +40,8 @@ namespace Valve.VR.Extras
 
         [Header("Hit Circle")]
         [Tooltip("射线碰撞点圆环，将预制体拖入此处")]
-        public GameObject focusCircle;
+        public GameObject focusCirclePrefab;
+        private GameObject focusCircle;
         public float circleDistanceRate = 0.01f;
 
 
@@ -89,6 +90,7 @@ namespace Valve.VR.Extras
 
             // qinwenCode
             // 初始把碰撞物设置为不激活
+            focusCircle = Instantiate(focusCirclePrefab, this.transform);
             focusCircle.SetActive(false);
 
         }
