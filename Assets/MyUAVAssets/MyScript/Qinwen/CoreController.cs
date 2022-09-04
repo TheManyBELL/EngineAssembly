@@ -34,7 +34,7 @@ public class CoreController : MonoBehaviour
         //deviceController = GetComponent<DeviceController>();
         //animaController = GetComponent<AnimationControllerNew>();
         //holoLabelController = GetComponent<HoloLabelController>();
-        //assemblyInfo = GetComponent<AssemblyInfo>();
+        assemblyInfo = GetComponent<AssemblyInfo>();
 
         //assemblyProgress = GetComponent<AssemblyProgressPanelCotrol>();
 
