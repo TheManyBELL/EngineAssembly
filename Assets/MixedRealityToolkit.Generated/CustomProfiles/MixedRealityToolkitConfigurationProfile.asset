@@ -19,7 +19,7 @@ MonoBehaviour:
   cameraProfile: {fileID: 0}
   cameraSystemType:
     reference: 
-  enableInputSystem: 0
+  enableInputSystem: 1
   inputSystemProfile: {fileID: 0}
   inputSystemType:
     reference: 

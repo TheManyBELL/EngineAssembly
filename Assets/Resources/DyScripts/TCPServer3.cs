@@ -236,8 +236,11 @@ public class TCPServer3 : MonoBehaviour
                 {
                     pointcloud_index = BitConverter.ToInt32(FRAME, 0);
 
+
                     displayPointClouds[pointcloud_index].Depth_compressed = BitConverter.ToInt32(FRAME, 17);
                     displayPointClouds[pointcloud_index].Color_compressed = BitConverter.ToInt32(FRAME, 21);
+
+                    Debug.Log("当前点云序号:" + pointcloud_index+",深度数据量:"+ displayPointClouds[pointcloud_index].Depth_compressed+ ",颜色数据量:"+ displayPointClouds[pointcloud_index].Color_compressed);
 
                     //displayPointClouds[pointcloud_index].Frame = new byte[displayPointClouds[pointcloud_index].Depth_compressed + displayPointClouds[pointcloud_index].Color_compressed + 8];
                     camera_index_arrived = true;
@@ -246,7 +249,7 @@ public class TCPServer3 : MonoBehaviour
 
                 if (camera_index_arrived && totBytesRead >= displayPointClouds[pointcloud_index].Depth_compressed + displayPointClouds[pointcloud_index].Color_compressed + 25)
                 {
-
+                    
 
                     Buffer.BlockCopy(FRAME, 4, displayPointClouds[pointcloud_index].Frame, 0, displayPointClouds[pointcloud_index].Depth_compressed + displayPointClouds[pointcloud_index].Color_compressed + 21);
 

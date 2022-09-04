@@ -19,10 +19,10 @@ public class DynamicEnableVR : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        TCPServer1 = GameObject.Find("PointCloud(Clone)/TCPserver1").GetComponent<MyTCPServer>();
-        TCPServer2 = GameObject.Find("PointCloud(Clone)/TCPserver2").GetComponent<MyTCPServer>();
-        TCPServer3 = GameObject.Find("PointCloud(Clone)/TCPserver3").GetComponent<MyTCPServer>();
-        TCPServer4 = GameObject.Find("PointCloud(Clone)/TCPserver4").GetComponent<MyTCPServer>();
+        TCPServer1 = GameObject.Find("PointCloudVR/TCPserver1").GetComponent<MyTCPServer>();
+        TCPServer2 = GameObject.Find("PointCloudVR/TCPserver2").GetComponent<MyTCPServer>();
+        TCPServer3 = GameObject.Find("PointCloudVR/TCPserver3").GetComponent<MyTCPServer>();
+        TCPServer4 = GameObject.Find("PointCloudVR/TCPserver4").GetComponent<MyTCPServer>();
 
         myTCPServers = new List<MyTCPServer>();
 

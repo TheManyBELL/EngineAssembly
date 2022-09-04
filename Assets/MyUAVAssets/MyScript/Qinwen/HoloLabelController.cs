@@ -57,6 +57,8 @@ public class HoloLabelController : MonoBehaviour
     [Tooltip("一次移动花费的时间(s)")]
     public float timeTakenDuringLerp = 2f;
 
+    // 标签们的公共父亲
+    private GameObject labelWareHouse;
 
     void Awake()
     {
@@ -151,6 +153,9 @@ public class HoloLabelController : MonoBehaviour
     /// </summary>
     private void CreateLabelForTargetListByScript(List<GameObject> targetList)
     {
+        // 标签们的公共父亲
+        labelWareHouse = new GameObject("LabelWareHouse");
+
         foreach(GameObject target in targetList)
         {
             Debug.Log("in create: "+target.name);
@@ -166,7 +171,10 @@ public class HoloLabelController : MonoBehaviour
                 holoLabelGenerator.SetPivotPosition(pivot_dir, pivot_offset);
                 holoLabelGenerator.isOnTop = true;
             }
+            
             holoLabelGenerator.SetLabelPrefab(HoloLabelPrefab);
+            holoLabelGenerator.SetLabelParentObject(labelWareHouse);
+
             holoLabel = holoLabelGenerator.GenerateHoloLabel();
 
             labelObjectList.Add(holoLabel);

@@ -20,15 +20,33 @@ public class HoloLabelGenerator : MonoBehaviour
     public bool isOnRight = false;
     public bool isOnCenter = false;
 
-    
+    // 父亲物体
+    private GameObject parentObject;
+
+    private GameObject holoLabel;
+    private ToolTip toolTip;
+    private GameObject anchor;
+    private GameObject pivot;
+
     void Start()
     {
         
     }
 
+    private void Update()
+    {
+        anchor.transform.position = this.transform.position;
+        pivot.transform.position = anchor.transform.position + pivotDirect * pivotDistance;
+    }
+
     public void SetLabelPrefab(GameObject prefab)
     {
         labelPrefab = prefab;
+    }
+
+    public void SetLabelParentObject(GameObject parent)
+    {
+        parentObject = parent;
     }
 
     public void SetPivotPosition(Vector3 dir,float dis)
@@ -44,24 +62,26 @@ public class HoloLabelGenerator : MonoBehaviour
             Debug.LogError(this.name + "该物体已有标签");
             return null;
         }
-        GameObject holoLabel = Instantiate(labelPrefab);
+
+        holoLabel = Instantiate(labelPrefab);
         holoLabel.name = labelName;
 
         // 设定文本
-        ToolTip toolTip = holoLabel.GetComponent<ToolTip>();
+        toolTip = holoLabel.GetComponent<ToolTip>();
         toolTip.ToolTipText = this.name;
 
         // 设定锚点（通过包围盒）
-        GameObject anchor = holoLabel.transform.GetChild(0).gameObject;
+        anchor = holoLabel.transform.GetChild(0).gameObject;
 
         // anchor.transform.position = getAnchorPosition();
         anchor.transform.position = this.transform.position;
 
-        GameObject pivot = holoLabel.transform.GetChild(1).gameObject;
+        pivot = holoLabel.transform.GetChild(1).gameObject;
         pivot.transform.position = anchor.transform.position + pivotDirect * pivotDistance;
 
         // 然后再设定一下父物体，先设定父物体会有偏差，原因不明
-        holoLabel.transform.parent = this.transform;
+        //holoLabel.transform.parent = this.transform;
+        holoLabel.transform.parent = parentObject.transform;
 
         holoLabel.SetActive(false);
 

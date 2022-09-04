@@ -14,6 +14,9 @@ public class CameraWalking : MonoBehaviour
     public float timeTakenDuringLerp = 10.0f;
     // 用于实现平滑移动
     private float _timeStartedLerping;
+    public float rotate_speed = 0.01f;
+
+    private Vector3 camera_rotation;
 
 
     // Start is called before the first frame update
@@ -21,6 +24,7 @@ public class CameraWalking : MonoBehaviour
     {
         cameraObject = this.transform.gameObject;
         SetCameraPosition(cameraObject, startPosition, startEulerAngle);
+        camera_rotation = cameraObject.transform.eulerAngles;
     }
 
     // Update is called once per frame
@@ -36,6 +40,16 @@ public class CameraWalking : MonoBehaviour
             // 移动的开始时间
             _timeStartedLerping = Time.time;
             StartCoroutine(LerpMoveCamera(cameraObject,startPosition, endPosition, endEulerAngle));
+        }
+        if (Input.GetKey(KeyCode.Q))
+        {
+            camera_rotation.y -= rotate_speed;
+            cameraObject.transform.eulerAngles = camera_rotation;
+        }
+        if (Input.GetKey(KeyCode.E))
+        {
+            camera_rotation.y += rotate_speed;
+            cameraObject.transform.eulerAngles = camera_rotation;
         }
 
     }

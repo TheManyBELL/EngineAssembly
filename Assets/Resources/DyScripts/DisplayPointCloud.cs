@@ -284,7 +284,7 @@ public class DisplayPointCloud : MonoBehaviour
             int Color_compressed = BitConverter.ToInt32(frame, 17);
 
             Dictionary<string, int> Sequence = new Dictionary<string, int>();
-            Sequence.Add("043422252343", 0);
+            Sequence.Add("125322064145", 0);
             Sequence.Add("125322062463", 1);
             Sequence.Add("125322061236", 2);
             Sequence.Add("125322064652", 3);
