@@ -68,7 +68,8 @@ public class HoloLabelGenerator : MonoBehaviour
 
         // 设定文本
         toolTip = holoLabel.GetComponent<ToolTip>();
-        toolTip.ToolTipText = this.name;
+        // 脚本挂载的零件名会带上(clone)，因此需要删除末尾的“(clone)”
+        toolTip.ToolTipText = this.name.Substring(0,this.name.Length-7);
 
         // 设定锚点（通过包围盒）
         anchor = holoLabel.transform.GetChild(0).gameObject;

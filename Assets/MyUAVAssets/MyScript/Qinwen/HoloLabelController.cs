@@ -235,7 +235,7 @@ public class HoloLabelController : MonoBehaviour
         Vector3 dir = (targetPosition - cameraTransform.position).normalized;
         float dot = Vector3.Dot(cameraTransform.forward, dir); // 判断物体是否在相机前面
 
-        if (dot > 0f && viewPos.x >= 0f && viewPos.x <= 1f && viewPos.y >= 0f && viewPos.y <= 1f) return true;
+        if (dot > 0f && viewPos.x >= -0.2f && viewPos.x <= 1.2f && viewPos.y >= -0.2f && viewPos.y <= 1.2f) return true;
         else return false;
     }
     
