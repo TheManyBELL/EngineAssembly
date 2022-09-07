@@ -26,31 +26,42 @@ public class TrackingServer : MonoBehaviour
 
     void Awake()
     {
-        serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-        clientList = new List<Socket>();
+        if (GlobleInfo.ClientMode.Equals(CameraMode.VR))
+        {
+            serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            clientList = new List<Socket>();
 
-        msg_queue = new Queue<string>();
-        initialPartsDictionary();
+            msg_queue = new Queue<string>();
+            initialPartsDictionary();
+        }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("服务器端已启动!");
-        serverSocket.Bind(new IPEndPoint(IPAddress.Parse(IP), port));
-        serverSocket.Listen(10); // 设定最多10个排队连接请求   
-        Thread myThread = new Thread(ListenClientConnect); // 通过多线程监听客户端连接  
-        myThread.Start();
+        if (GlobleInfo.ClientMode.Equals(CameraMode.VR))
+        {
+            Debug.Log("服务器端已启动!");
+            serverSocket.Bind(new IPEndPoint(IPAddress.Parse(IP), port));
+            serverSocket.Listen(10); // 设定最多10个排队连接请求   
+            Thread myThread = new Thread(ListenClientConnect); // 通过多线程监听客户端连接  
+            myThread.Start();
+        }
+            
     }
 
     // Update is called once per frame
     void Update()
     {
-        while (msg_queue.Count > 0)
+        if (GlobleInfo.ClientMode.Equals(CameraMode.VR))
         {
-            string msg = msg_queue.Dequeue();
-            ParseMsg(msg);
+            while (msg_queue.Count > 0)
+            {
+                string msg = msg_queue.Dequeue();
+                ParseMsg(msg);
+            }
         }
+            
     }
 
     void initialPartsDictionary()
