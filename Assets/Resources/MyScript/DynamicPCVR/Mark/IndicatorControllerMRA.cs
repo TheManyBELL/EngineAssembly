@@ -67,7 +67,8 @@ public class IndicatorControllerMRA : MonoBehaviour
                 if (realEndPart == null) { Debug.LogError("【indicator】未能根据名称找到对应 目标 零件物体"); return; }
 
                 indicatorPart = Instantiate(partPrefab, realEndPart.transform); // 将父物体设置为实时零件
-                indicatorPart.transform.localPosition = new Vector3(0, indicatorPart_offset_y, 0); // 默认相对父物体在y上方
+                indicatorPart.transform.position = new Vector3(realEndPart.transform.position.x, realEndPart.transform.position.y+indicatorPart_offset_y, realEndPart.transform.position.z); // 默认相对父物体在y上方
+                indicatorPart.transform.eulerAngles = new Vector3(0, 0, -90);
             }
 
             indicatorPart.name = currentIndicator.startPartName + "_indicator";

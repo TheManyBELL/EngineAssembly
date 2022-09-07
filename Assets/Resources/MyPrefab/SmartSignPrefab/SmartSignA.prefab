@@ -23065,7 +23065,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9146813191007123987
 Transform:
   m_ObjectHideFlags: 0
@@ -27038,10 +27038,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnginePartsList:
+  - {fileID: 5643337280020806093, guid: 27a909e0a52780c44abed828c9c92118, type: 3}
   - {fileID: 6330497958546059700, guid: ca235b3eb12c1214aa214c614bc73eb2, type: 3}
   - {fileID: 8858882255320328131, guid: deb25aeec62c37c479699cf75a9c328c, type: 3}
   - {fileID: 3865487833443306060, guid: eecfba40a45077b4399b5eea8ebd663b, type: 3}
-  - {fileID: 5643337280020806093, guid: 27a909e0a52780c44abed828c9c92118, type: 3}
   - {fileID: 4755523397190793938, guid: 656e3cff7d8a901469c7524ade2da054, type: 3}
   - {fileID: 9156062966088802777, guid: 5e89b2470afb36640b8b3cdc961c16a5, type: 3}
 --- !u!114 &5237663771311860129

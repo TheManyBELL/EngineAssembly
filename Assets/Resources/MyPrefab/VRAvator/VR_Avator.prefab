@@ -2454,6 +2454,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DepthCollisionSphere_right
       objectReference: {fileID: 0}
+    - target: {fileID: 9085032347184655347, guid: 46a1f4b88fd026a429c5e51b5c7ee466, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9085032347184655351, guid: 46a1f4b88fd026a429c5e51b5c7ee466, type: 3}
       propertyPath: m_RootOrder
       value: 7

@@ -60,6 +60,9 @@ public class HoloLabelController : MonoBehaviour
     // 标签们的公共父亲
     private GameObject labelWareHouse;
 
+    // 控制标签显示
+    private int curLabel = -1;
+
     void Awake()
     {
         assemblyInfo = GetComponent<AssemblyInfo>();
@@ -92,11 +95,24 @@ public class HoloLabelController : MonoBehaviour
             Debug.Log("HoloLabelController 已经获取 deviceList"+ deviceList.Count);
             CreateLabelForTargetListByScript(deviceList);
         }
-        if(deviceList.Count != 0)
+        if(labelObjectList.Count != 0)
         {
-            LabelVisibilityControl();
+            //LabelVisibilityControl();
+            // 通过-和=两个按键控制标签显示和关闭
+            if (Input.GetKeyDown(KeyCode.Minus))
+            {
+                if(curLabel == -1) { return; }
+                labelObjectList[curLabel].SetActive(true);
+                curLabel--;
+            }
+            if (Input.GetKeyDown(KeyCode.Equals))
+            {
+                if (curLabel == labelObjectList.Count) { return; }
+                curLabel++;
+                labelObjectList[curLabel].SetActive(false);
+            }
         }
-        
+
     }
 
     /// <summary>
