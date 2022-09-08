@@ -157,45 +157,46 @@ public class CoreController : MonoBehaviour
 
     public void OnPressNextButtonNew()
     {
+        
         Animator ator = null;
-        if (!GameObject.Find("风机外壳(clone)")) return;
+        if (!GameObject.Find("风机外壳(Clone)")) return;
 
-        ator = GameObject.Find("风机外壳(clone)").GetComponent<Animator>();
+        ator = GameObject.Find("风机外壳(Clone)").GetComponent<Animator>();
         int current = ator.GetInteger("AnimationIndex");
         current++;
         ator.SetInteger("AnimationIndex", current);
         
-        ator = GameObject.Find("风机外壳支架(clone)").GetComponent<Animator>();
+        ator = GameObject.Find("风机外壳支架(Clone)").GetComponent<Animator>();
         ator.SetInteger("AnimationIndex", current);
-        ator = GameObject.Find("高压涡轮主体(clone)").GetComponent<Animator>();
+        ator = GameObject.Find("高压涡轮主体(Clone)").GetComponent<Animator>();
         ator.SetInteger("AnimationIndex", current);
-        ator = GameObject.Find("风扇(clone)").GetComponent<Animator>();
+        ator = GameObject.Find("风扇(Clone)").GetComponent<Animator>();
         ator.SetInteger("AnimationIndex", current);
-        ator = GameObject.Find("轴承(大)(clone)").GetComponent<Animator>();
+        ator = GameObject.Find("轴承(大)(Clone)").GetComponent<Animator>();
         ator.SetInteger("AnimationIndex", current);
-        ator = GameObject.Find("轴承(小)(clone)").GetComponent<Animator>();
+        ator = GameObject.Find("轴承(小)(Clone)").GetComponent<Animator>();
         ator.SetInteger("AnimationIndex", current);
     }
 
     public void OnPressBackButtonNew()
     {
         Animator ator = null;
-        if (!GameObject.Find("风机外壳(clone)")) return;
+        if (!GameObject.Find("风机外壳(Clone)")) return;
 
-        ator = GameObject.Find("风机外壳(clone)").GetComponent<Animator>();
+        ator = GameObject.Find("风机外壳(Clone)").GetComponent<Animator>();
         int current = ator.GetInteger("AnimationIndex");
         current--;
         ator.SetInteger("AnimationIndex", current);
 
-        ator = GameObject.Find("风机外壳支架(clone)").GetComponent<Animator>();
+        ator = GameObject.Find("风机外壳支架(Clone)").GetComponent<Animator>();
         ator.SetInteger("AnimationIndex", current);
-        ator = GameObject.Find("高压涡轮主体(clone)").GetComponent<Animator>();
+        ator = GameObject.Find("高压涡轮主体(Clone)").GetComponent<Animator>();
         ator.SetInteger("AnimationIndex", current);
-        ator = GameObject.Find("风扇(clone)").GetComponent<Animator>();
+        ator = GameObject.Find("风扇(Clone)").GetComponent<Animator>();
         ator.SetInteger("AnimationIndex", current);
-        ator = GameObject.Find("轴承(大)(clone)").GetComponent<Animator>();
+        ator = GameObject.Find("轴承(大)(Clone)").GetComponent<Animator>();
         ator.SetInteger("AnimationIndex", current);
-        ator = GameObject.Find("轴承(小)(clone)").GetComponent<Animator>();
+        ator = GameObject.Find("轴承(小)(Clone)").GetComponent<Animator>();
         ator.SetInteger("AnimationIndex", current);
     }
 
