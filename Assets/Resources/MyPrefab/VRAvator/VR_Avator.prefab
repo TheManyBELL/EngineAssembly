@@ -2573,6 +2573,22 @@ PrefabInstance:
       propertyPath: m_AssetId
       value: 231536518bd6fb241ace0ca695eac1c0
       objectReference: {fileID: 0}
+    - target: {fileID: 1874279053231165526, guid: 64a73226730eebf44b411b5bed8c89cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2229381313388189021, guid: 64a73226730eebf44b411b5bed8c89cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5020892955477444099, guid: 64a73226730eebf44b411b5bed8c89cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8482519437788417194, guid: 64a73226730eebf44b411b5bed8c89cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4739009749120200207, guid: 64a73226730eebf44b411b5bed8c89cb, type: 3}
     - {fileID: 1333529025825916243, guid: 64a73226730eebf44b411b5bed8c89cb, type: 3}

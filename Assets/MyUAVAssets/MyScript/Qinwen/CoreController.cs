@@ -164,6 +164,8 @@ public class CoreController : MonoBehaviour
         ator = GameObject.Find("风机外壳(Clone)").GetComponent<Animator>();
         int current = ator.GetInteger("AnimationIndex");
         current++;
+        if (current >= 8) current = 7;
+        
         ator.SetInteger("AnimationIndex", current);
         
         ator = GameObject.Find("风机外壳支架(Clone)").GetComponent<Animator>();
@@ -186,6 +188,7 @@ public class CoreController : MonoBehaviour
         ator = GameObject.Find("风机外壳(Clone)").GetComponent<Animator>();
         int current = ator.GetInteger("AnimationIndex");
         current--;
+        if (current < 0) current = 0;
         ator.SetInteger("AnimationIndex", current);
 
         ator = GameObject.Find("风机外壳支架(Clone)").GetComponent<Animator>();

@@ -19,13 +19,13 @@ public class CameraUpdateAR : MonoBehaviour
         if (GlobleInfo.ClientMode.Equals(CameraMode.VR)) { return; }
         if (arCamera!=null)
         {
-            Debug.Log("Update depth camera now...");
+            // Debug.Log("Update depth camera now...");
             transform.position = arCamera.transform.position;
             transform.rotation = arCamera.transform.rotation;
         }
         else
         {
-            Debug.LogError("AR Camera not found");
+            // Debug.LogError("AR Camera not found");
         }
     }
 }

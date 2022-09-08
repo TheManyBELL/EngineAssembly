@@ -156,7 +156,7 @@ public class HoloLabelController : MonoBehaviour
             // 然后再设定一下父物体，先设定父物体会有偏差，原因不明
             holoLabel.transform.parent = target.transform;
 
-            holoLabel.SetActive(false);
+            holoLabel.SetActive(true);
 
             labelObjectList.Add(holoLabel);
 

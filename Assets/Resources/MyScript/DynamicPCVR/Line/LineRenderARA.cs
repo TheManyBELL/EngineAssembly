@@ -27,7 +27,6 @@ public class LineRenderARA : MonoBehaviour
     void Update()
     {
 
-
         line_index = 0;
         for (int i = 0; i < mirrorController.syncArrowList.Count; ++i)
         {

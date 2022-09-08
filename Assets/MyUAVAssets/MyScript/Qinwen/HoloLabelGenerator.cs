@@ -84,7 +84,7 @@ public class HoloLabelGenerator : MonoBehaviour
         //holoLabel.transform.parent = this.transform;
         holoLabel.transform.parent = parentObject.transform;
 
-        holoLabel.SetActive(false);
+        holoLabel.SetActive(true);
 
         // 设置标签层级为深度相机不可见
         ChangeLayer(holoLabel.transform, LayerMask.NameToLayer("DepthCameraUnivisible"));
