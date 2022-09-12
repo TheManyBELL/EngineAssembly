@@ -42,6 +42,7 @@ public class GlobalUtils : MonoBehaviour
 
     public Vector3 MWorldToScreenPointDepth(Vector3 p)
     {
+        
         Vector3 screenP = depthCamera.WorldToScreenPoint(p);
         screenP.z = screenP.z / depthCamera.farClipPlane;
         return screenP;

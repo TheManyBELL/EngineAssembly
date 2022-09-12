@@ -26505,7 +26505,7 @@ MonoBehaviour:
   segmentThickness: 0.01
   RotateSymbol: {fileID: 7486974711368413920, guid: 3562510d2867c26459ad1c13afb77960, type: 3}
   PressSymbol: {fileID: 293570593768631736, guid: 84e7ebf45d5a41144bbf442e2ff5e2b5, type: 3}
-  isEnableRealTimeUpdate: 0
+  isEnableRealTimeUpdate: 1
 --- !u!114 &4468969535677363155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26525,7 +26525,7 @@ MonoBehaviour:
   lineVisibility: 
   filter: 1
   filter_frame_count: 20
-  isEnableRealTimeDeocclusion: 0
+  isEnableRealTimeDeocclusion: 1
 --- !u!114 &5101784948893943525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26538,8 +26538,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2189c233533f28b4d8bd39eea691a2c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEnableRealTimeUpdate: 0
-  isEnableIntersectBox: 0
+  isEnableRealTimeUpdate: 1
+  isEnableIntersectBox: 1
 --- !u!114 &4122971587577157833
 MonoBehaviour:
   m_ObjectHideFlags: 0

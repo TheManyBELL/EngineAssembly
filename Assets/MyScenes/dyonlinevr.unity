@@ -1522,7 +1522,7 @@ MonoBehaviour:
   offlineScene: Assets/MyScenes/dyonlinevr.unity
   onlineScene: Assets/MyScenes/dyonlinevr.unity
   transport: {fileID: 1046075959}
-  networkAddress: 192.168.38.10
+  networkAddress: 219.224.167.165
   maxConnections: 100
   authenticator: {fileID: 0}
   playerPrefab: {fileID: 4374600861008913567, guid: 5301dfd1458cacc44bb21c8a1c9f8d12, type: 3}

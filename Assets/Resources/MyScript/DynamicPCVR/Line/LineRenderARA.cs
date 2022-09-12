@@ -18,6 +18,7 @@ public class LineRenderARA : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(Camera.main.scaledPixelHeight);
         mirrorController = GetComponentInParent<MirrorControllerA>();
         lines = new List<GameObject>();
 
@@ -31,7 +32,7 @@ public class LineRenderARA : MonoBehaviour
         for (int i = 0; i < mirrorController.syncArrowList.Count; ++i)
         {
             DPCArrow current_line = mirrorController.syncArrowList[i];
-            Debug.Log("!!! " + current_line.curvePointList.Count);
+            // Debug.Log("!!! " + current_line.curvePointList.Count);
             DrawLine(ref current_line);
         }
         ClearLine();

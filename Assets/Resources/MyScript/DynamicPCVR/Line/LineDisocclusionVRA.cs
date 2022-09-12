@@ -27,8 +27,10 @@ public class LineDisocclusionVRA : MonoBehaviour
 
     private GlobalUtils globalUtils;
 
+    public GameObject visible_sphere1, visible_sphere2;
+
     // 是否允许实时去遮挡计算，用于性能测试 
-    public bool isEnableRealTimeDeocclusion = false;
+    public bool isEnableRealTimeDeocclusion;
 
     private void Start()
     {
@@ -92,7 +94,7 @@ public class LineDisocclusionVRA : MonoBehaviour
         DrawArrow();
         AdjustPointOrder();
         DrawVisiblestraightLine();
-        detourToEndpoint();
+        // detourToEndpoint();
         detourToUnvisiblePoint();
     }
 
@@ -121,10 +123,11 @@ public class LineDisocclusionVRA : MonoBehaviour
     {
         if (!globalUtils.GetPointVisibility(p2))
         {
-            return;
+            // return;
         }
-        Vector3 screenP1 = globalUtils.MWorldToScreenPointDepth(p1);
+        Vector3 screenP1 = globalUtils.MWorldToScreenPointDepth(p2 + (p1 - p2) * 0.1f);
         Vector3 screenP2 = globalUtils.MWorldToScreenPointDepth(p2);
+   
         Vector2 dir = (screenP1 - screenP2).normalized;
         Vector2 verticalDir = new Vector2(-dir.y, dir.x);
 
