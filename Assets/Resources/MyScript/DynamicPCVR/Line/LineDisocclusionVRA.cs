@@ -223,6 +223,15 @@ public class LineDisocclusionVRA : MonoBehaviour
     private void DrawVisiblestraightLine()
     {
         int i = 0;
+
+        if (!lineVisibility[0])
+        {
+            Vector3 tp = scaleToVec(0);
+            while (i < VisibilitySampleCount && !lineVisibility[i]) { i++; }
+            while (i < VisibilitySampleCount && lineVisibility[i]) { i++; }
+            curve_list.Add(new Vector3[] { tp, scaleToVec(i - 1) });
+        }
+
         while (i < VisibilitySampleCount)
         {
             if (lineVisibility[i])
@@ -232,6 +241,14 @@ public class LineDisocclusionVRA : MonoBehaviour
                 curve_list.Add(new Vector3[] { tp, scaleToVec(i - 1) });
             }
             i++;
+        }
+
+        i = VisibilitySampleCount - 1;
+        if (!lineVisibility[i])
+        {
+            Vector3 tp = scaleToVec(i);
+            while (i > 0 && !lineVisibility[i]) { i--; }
+            curve_list.Add(new Vector3[] { tp, scaleToVec(i - 1) });
         }
     }
 
